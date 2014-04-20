@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@class SpeakersCollectionViewDataSource;
 
+@interface FirstViewController : UICollectionViewController
+
+@property(nonatomic, strong) SpeakersCollectionViewDataSource *speakersDataSource;
 @end

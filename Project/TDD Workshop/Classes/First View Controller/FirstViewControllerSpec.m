@@ -8,7 +8,7 @@ describe(@"FirstViewController", ^{
     __block FirstViewController *viewController;
 
     beforeEach(^{
-        viewController = [[FirstViewController alloc] init];;
+        viewController = [[FirstViewController alloc] init];
     });
 
     afterEach(^{

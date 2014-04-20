@@ -17,10 +17,13 @@
 		B27A90079C7DD56B5D2A5314 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A976AEC6A2E730160F504 /* SecondViewController.m */; };
 		B27A90C1276516EF0976C721 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A98A82123128D7921D187 /* AppDelegate.m */; };
 		B27A9102589328414886245B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27A9F1C86B830D77578705F /* Images.xcassets */; };
+		B27A92620842158F4BFAF397 /* SpeakersCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92AF299A933F6819BD8F /* SpeakersCollectionViewDataSource.m */; };
 		B27A937730478652E2F1969E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27A9EA130AFF757F72BDC66 /* Main.storyboard */; };
 		B27A954E6E7A4E4CA2F00D8A /* FirstViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9720DB26070703067460 /* FirstViewControllerSpec.m */; };
 		B27A99C4343479416F7949A1 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96CC784650B22E261274 /* FirstViewController.m */; };
 		B27A9ACDFF47B5C7A1E152D0 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CFFF76719DF63F378A8 /* Speaker.m */; };
+		B27A9B105BBD67D80D01E3E5 /* SpeakersCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92AF299A933F6819BD8F /* SpeakersCollectionViewDataSource.m */; };
+		B27A9D2A610E08BA7B2FF7D4 /* SpeakersCollectionViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9D2C679D85AD77ECDB6D /* SpeakersCollectionViewDataSourceSpec.m */; };
 		B27A9D59259653BDEABA00A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A945B2F9713B160FE4645 /* main.m */; };
 		B27A9F0D42A084E6F2333868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27A9EA130AFF757F72BDC66 /* Main.storyboard */; };
 		BD856E5C1C064F578B72D2D3 /* libPods-specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F06B64128243AF9AC3D4B0 /* libPods-specs.a */; };
@@ -49,6 +52,7 @@
 		4442B29770594D57863624A3 /* Pods-specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-specs.xcconfig"; path = "Pods/Pods-specs.xcconfig"; sourceTree = "<group>"; };
 		B27A91D8F9FC82A0D8F2EB73 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B27A9294987EC3FA6A167639 /* TDD Workshop-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TDD Workshop-Prefix.pch"; sourceTree = "<group>"; };
+		B27A92AF299A933F6819BD8F /* SpeakersCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersCollectionViewDataSource.m; sourceTree = "<group>"; };
 		B27A93855BF2107C0B4BF793 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		B27A945B2F9713B160FE4645 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B27A94917A0F6D37B21AF556 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -58,7 +62,9 @@
 		B27A976AEC6A2E730160F504 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		B27A97CEB86DD7DCEFFB29BD /* TDD Workshop-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "TDD Workshop-Info.plist"; sourceTree = "<group>"; };
 		B27A98A82123128D7921D187 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B27A992CDED62E26B51734A3 /* SpeakersCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersCollectionViewDataSource.h; sourceTree = "<group>"; };
 		B27A9CFFF76719DF63F378A8 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
+		B27A9D2C679D85AD77ECDB6D /* SpeakersCollectionViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersCollectionViewDataSourceSpec.m; sourceTree = "<group>"; };
 		B27A9EA130AFF757F72BDC66 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B27A9F1C86B830D77578705F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2F06B64128243AF9AC3D4B0 /* libPods-specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +179,9 @@
 		B27A9854DEB8FC40133A1938 /* Data Source */ = {
 			isa = PBXGroup;
 			children = (
+				B27A92AF299A933F6819BD8F /* SpeakersCollectionViewDataSource.m */,
+				B27A992CDED62E26B51734A3 /* SpeakersCollectionViewDataSource.h */,
+				B27A9D2C679D85AD77ECDB6D /* SpeakersCollectionViewDataSourceSpec.m */,
 			);
 			path = "Data Source";
 			sourceTree = "<group>";
@@ -258,7 +267,7 @@
 				ORGANIZATIONNAME = "Mobile Warsaw";
 				TargetAttributes = {
 					43C5D4D41904429F002D1766 = {
-						TestTargetID = 43C5D4B01904429F002D1766;
+						TestTargetID = 43C5D4B01904429F002D1766 /* TDD Workshop */;
 					};
 				};
 			};
@@ -345,6 +354,7 @@
 				B27A99C4343479416F7949A1 /* FirstViewController.m in Sources */,
 				B27A90079C7DD56B5D2A5314 /* SecondViewController.m in Sources */,
 				B27A9D59259653BDEABA00A3 /* main.m in Sources */,
+				B27A9B105BBD67D80D01E3E5 /* SpeakersCollectionViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +363,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27A954E6E7A4E4CA2F00D8A /* FirstViewControllerSpec.m in Sources */,
+				B27A92620842158F4BFAF397 /* SpeakersCollectionViewDataSource.m in Sources */,
+				B27A9D2A610E08BA7B2FF7D4 /* SpeakersCollectionViewDataSourceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +497,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TDD Workshop/TDD Workshop-Prefix.pch";
+				GCC_PREFIX_HEADER = "TDD Workshop/Supporting Files/TDD Workshop-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -508,7 +520,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TDD Workshop/TDD Workshop-Prefix.pch";
+				GCC_PREFIX_HEADER = "TDD Workshop/Supporting Files/TDD Workshop-Prefix.pch";
 				INFOPLIST_FILE = "TDD WorkshopTests/TDD WorkshopTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
