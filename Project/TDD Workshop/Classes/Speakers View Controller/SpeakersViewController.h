@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SpeakersViewController.h
 //  TDD Workshop
 //
 //  Created by Pawel Dudek on 20/04/14.
@@ -10,7 +10,7 @@
 
 @class SpeakersCollectionViewDataSource;
 
-@interface FirstViewController : UICollectionViewController
+@interface SpeakersViewController : UICollectionViewController
 
 @property(nonatomic, strong) SpeakersCollectionViewDataSource *speakersDataSource;
 @end

@@ -1,15 +1,15 @@
 //
-//  FirstViewController.m
+//  SpeakersViewController.m
 //  TDD Workshop
 //
 //  Created by Pawel Dudek on 20/04/14.
 //  Copyright (c) 2014 Mobile Warsaw. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "SpeakersViewController.h"
 #import "SpeakersCollectionViewDataSource.h"
 
-@implementation FirstViewController
+@implementation SpeakersViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
