@@ -1,0 +1,12 @@
+platform :ios, '7.0'
+
+xcodeproj 'TDD Workshop'
+
+target :specs do
+  link_with 'TDD WorkshopTests'
+
+  pod 'Specta'
+  pod 'Expecta'
+  pod 'OCMockito'
+  pod 'OCMock'
+end

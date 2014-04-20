@@ -7,3 +7,8 @@
 # Pods/
 
 .DS_Store
+Project/.idea
+Project/Pods/Pods.xcodeproj/xcuserdata
+Project/TDD Workshop.xcworkspace/xcuserdata
+Project/TDD Workshop.xcodeproj/xcuserdata
+Project/TDD Workshop.xcodeproj/project.xcworkspace/xcuserdata
