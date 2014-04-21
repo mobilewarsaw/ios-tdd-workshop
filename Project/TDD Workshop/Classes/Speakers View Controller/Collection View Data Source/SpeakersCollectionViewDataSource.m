@@ -5,6 +5,7 @@
 
 #import "SpeakersCollectionViewDataSource.h"
 
+NSString *SpeakersCollectionViewCellIdentifier = @"SpeakersCollectionViewCellIdentifier";
 
 @implementation SpeakersCollectionViewDataSource
 
@@ -24,7 +25,9 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SpeakersCollectionViewCellIdentifier
+                                                                           forIndexPath:indexPath];
+    return cell;
 }
 
 @end

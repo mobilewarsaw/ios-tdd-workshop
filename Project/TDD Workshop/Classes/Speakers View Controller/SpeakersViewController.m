@@ -40,6 +40,14 @@
     return speakers;
 }
 
+#pragma mark - UIViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:SpeakersCollectionViewCellIdentifier];
+}
+
 #pragma mark - Overriden Setters
 
 - (void)setSpeakersDataSource:(SpeakersCollectionViewDataSource *)speakersDataSource {
