@@ -8,25 +8,10 @@
 
 #import "AppDelegate.h"
 
-#ifdef DEBUG
-/// Tests if .xctest bundle is loaded, so returns YES if the app is running with XCTest framework.
-inline BOOL IsUnitTesting() __attribute__((const));
-inline BOOL IsUnitTesting()
-{
-    NSDictionary *environment = [NSProcessInfo processInfo].environment;
-    NSString *injectBundlePath = environment[@"XCInjectBundle"];
-    return [injectBundlePath.pathExtension isEqualToString:@"xctest"];
-}
-#endif
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#ifdef DEBUG
-    if (IsUnitTesting()) return YES;
-#endif
-
     // Override point for customization after application launch.
     return YES;
 }

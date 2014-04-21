@@ -1,0 +1,5 @@
+[
+  "-workspace", "TDD Workshop.xcworkspace",
+  "-scheme", "TDD Workshop",
+  "-sdk", "iphonesimulator"
+]
