@@ -16,6 +16,19 @@ describe(@"SpeakersViewController", ^{
         viewController = nil;
     });
 
+    describe(@"tab bar item", ^{
+
+        __block UITabBarItem *item;
+
+        beforeEach(^{
+            item = [viewController tabBarItem];
+        });
+
+        it(@"should have a contact image", ^{
+            expect(item.selectedImage).to.equal([UIImage imageNamed:@"Contact"]);
+        });
+    });
+
     describe(@"speakers data source", ^{
 
         __block SpeakersCollectionViewDataSource *dataSource;
@@ -54,6 +67,10 @@ describe(@"SpeakersViewController", ^{
             collectionView = [viewController collectionView];
         });
 
+        it(@"should always bounces vertically", ^{
+            expect(collectionView.alwaysBounceVertical).to.beTruthy();
+        });
+
         describe(@"layout", ^{
 
             __block UICollectionViewFlowLayout *layout;
@@ -65,7 +82,6 @@ describe(@"SpeakersViewController", ^{
             it(@"should be a flow layout", ^{
                 expect(layout).to.beKindOf([UICollectionViewFlowLayout class]);
             });
-
 
             describe(@"when the view lays out it subviews", ^{
                 beforeEach(^{
