@@ -8,13 +8,36 @@
 
 #import "SpeakersViewController.h"
 #import "SpeakersCollectionViewDataSource.h"
+#import "Speaker.h"
 
 @implementation SpeakersViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (id)init {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    self = [super initWithCollectionViewLayout:layout];
+    if (self) {
+        self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] initWithSpeakers:[self defaultSpeakers]];
+        self.title = @"Speakers";
+    }
 
-    self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] init];
+    return self;
+}
+
+#pragma mark - Init Helpers
+
+- (NSArray *)defaultSpeakers {
+    NSString *speakersPath = [[NSBundle mainBundle] pathForResource:@"Speakers" ofType:@"JSON"];
+    NSData *speakersData = [NSData dataWithContentsOfFile:speakersPath];
+    NSArray *JSONSpeakers = [NSJSONSerialization JSONObjectWithData:speakersData options:0 error:nil];
+
+    NSMutableArray *speakers = [NSMutableArray array];
+
+    for (NSDictionary *JSONSpeaker in JSONSpeakers) {
+        Speaker *speaker = [[Speaker alloc] initWithName:JSONSpeaker[@"name"]];
+        [speakers addObject:speaker];
+    }
+
+    return speakers;
 }
 
 #pragma mark - Overriden Setters
@@ -23,7 +46,5 @@
     _speakersDataSource = speakersDataSource;
     self.collectionView.dataSource = self.speakersDataSource;
 }
-
-#pragma mark -
 
 @end

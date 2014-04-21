@@ -9,13 +9,15 @@ describe(@"SpeakersViewController", ^{
     __block SpeakersViewController *viewController;
 
     beforeEach(^{
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        viewController = [[SpeakersViewController alloc] initWithCollectionViewLayout:flowLayout];
-        [viewController awakeFromNib];
+        viewController = [[SpeakersViewController alloc] init];
     });
 
     afterEach(^{
         viewController = nil;
+    });
+
+    it(@"should have a title", ^{
+        expect(viewController.title).to.equal(@"Speakers");
     });
 
     describe(@"speakers data source", ^{

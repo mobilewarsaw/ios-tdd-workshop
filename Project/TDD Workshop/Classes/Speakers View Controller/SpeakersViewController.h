@@ -11,6 +11,6 @@
 @class SpeakersCollectionViewDataSource;
 
 @interface SpeakersViewController : UICollectionViewController
-
 @property(nonatomic, strong) SpeakersCollectionViewDataSource *speakersDataSource;
+
 @end
