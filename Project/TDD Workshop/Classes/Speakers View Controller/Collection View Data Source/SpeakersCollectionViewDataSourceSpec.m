@@ -3,15 +3,16 @@
 
 #import "SpeakersCollectionViewDataSource.h"
 #import "Speaker.h"
+#import "SpeakerCollectionViewCell.h"
 
-SPEC_BEGIN(SpeakersCollectionViewDataSourceSpec)
+SPEC_BEGIN(SpeakersCollectionViewDataSource)
 
 describe(@"SpeakersCollectionViewDataSource", ^{
     __block SpeakersCollectionViewDataSource *collectionViewDataSource;
 
     beforeEach(^{
-        Speaker *fixtureSpeaker1 = [[Speaker alloc] init];
-        Speaker *fixtureSpeaker2 = [[Speaker alloc] init];
+        Speaker *fixtureSpeaker1 = [[Speaker alloc] initWithName:@"Fixture Name 1"];
+        Speaker *fixtureSpeaker2 = [[Speaker alloc] initWithName:@"Fixture Name 2"];
 
         NSArray *speakers = @[fixtureSpeaker1, fixtureSpeaker2];
 
@@ -38,13 +39,43 @@ describe(@"SpeakersCollectionViewDataSource", ^{
 
         describe(@"cell for row at index path", ^{
 
-            __block UICollectionViewCell *cell;
+            __block SpeakerCollectionViewCell *cell;
+            __block UICollectionView *collectionView;
+            __block UICollectionViewFlowLayout *layout;
 
             beforeEach(^{
-                cell = [collectionViewDataSource collectionView:nil cellForItemAtIndexPath:nil];
+                layout = [[UICollectionViewFlowLayout alloc] init];
+                collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
+                                                    collectionViewLayout:layout];
+                collectionView.dataSource = collectionViewDataSource;
+
+                [collectionView registerClass:[SpeakerCollectionViewCell class]
+                   forCellWithReuseIdentifier:SpeakersCollectionViewCellIdentifier];
             });
 
+            context(@"when it's the first row", ^{
+                beforeEach(^{
+                    cell = (id) [collectionViewDataSource collectionView:collectionView
+                                                  cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0
+                                                                                            inSection:0]];
+                });
 
+                it(@"should set the text of name label on cell to first speakers name", ^{
+                    expect(cell.nameLabel.text).to.equal(@"Fixture Name 1");
+                });
+            });
+
+            context(@"when it's the second row", ^{
+                beforeEach(^{
+                    cell = (id) [collectionViewDataSource collectionView:collectionView
+                                                  cellForItemAtIndexPath:[NSIndexPath indexPathForRow:1
+                                                                                            inSection:0]];
+                });
+
+                it(@"should set the text of name label on cell to first speakers name", ^{
+                    expect(cell.nameLabel.text).to.equal(@"Fixture Name 2");
+                });
+            });
         });
     });
 });

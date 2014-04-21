@@ -9,6 +9,7 @@
 #import "SpeakersViewController.h"
 #import "SpeakersCollectionViewDataSource.h"
 #import "Speaker.h"
+#import "SpeakerCollectionViewCell.h"
 
 @implementation SpeakersViewController
 
@@ -17,7 +18,7 @@
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] initWithSpeakers:[self defaultSpeakers]];
-        self.title = @"Speakers";
+        self.title = @"Soeakers";
     }
 
     return self;
@@ -45,7 +46,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:SpeakersCollectionViewCellIdentifier];
+    [self.collectionView registerClass:[SpeakerCollectionViewCell class]
+            forCellWithReuseIdentifier:SpeakersCollectionViewCellIdentifier];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *) self.collectionViewLayout;
+    flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.bounds), 44);
 }
 
 #pragma mark - Overriden Setters

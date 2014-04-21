@@ -19,6 +19,7 @@
 		B27A9102589328414886245B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27A9F1C86B830D77578705F /* Images.xcassets */; };
 		B27A937730478652E2F1969E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27A9EA130AFF757F72BDC66 /* Main.storyboard */; };
 		B27A954E6E7A4E4CA2F00D8A /* SpeakersViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9720DB26070703067460 /* SpeakersViewControllerSpec.m */; };
+		B27A97FE7901600A8818F3DA /* SpeakerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9E37AC949A57E1B51C39 /* SpeakerCollectionViewCell.m */; };
 		B27A99C4343479416F7949A1 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96CC784650B22E261274 /* SpeakersViewController.m */; };
 		B27A9A0FD94ECA88196295DE /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A97D7E26B0DD389DAA34F /* RootTabBarController.m */; };
 		B27A9ACDFF47B5C7A1E152D0 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CFFF76719DF63F378A8 /* Speaker.m */; };
@@ -50,11 +51,13 @@
 		43C5D4E01904429F002D1766 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43C5D4EC190447DE002D1766 /* Specs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Specs.h; sourceTree = "<group>"; };
 		4442B29770594D57863624A3 /* Pods-specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-specs.xcconfig"; path = "Pods/Pods-specs.xcconfig"; sourceTree = "<group>"; };
+		B27A906A6CF5289BAF372867 /* SpeakerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerCollectionViewCell.h; sourceTree = "<group>"; };
 		B27A91D8F9FC82A0D8F2EB73 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B27A9294987EC3FA6A167639 /* TDD Workshop-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TDD Workshop-Prefix.pch"; sourceTree = "<group>"; };
 		B27A92AF299A933F6819BD8F /* SpeakersCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersCollectionViewDataSource.m; sourceTree = "<group>"; };
 		B27A93855BF2107C0B4BF793 /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
 		B27A945B2F9713B160FE4645 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B27A946A674AB41D1AD4B020 /* SpeakerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerCell.h; sourceTree = "<group>"; };
 		B27A95D785FBAC782725090F /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
 		B27A962953CC54B6ECA2B94E /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarController.h; sourceTree = "<group>"; };
 		B27A96CC784650B22E261274 /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		B27A9BEE6F48E39B73B68281 /* Speakers.JSON */ = {isa = PBXFileReference; lastKnownFileType = file.JSON; path = Speakers.JSON; sourceTree = "<group>"; };
 		B27A9CFFF76719DF63F378A8 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
 		B27A9D2C679D85AD77ECDB6D /* SpeakersCollectionViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersCollectionViewDataSourceSpec.m; sourceTree = "<group>"; };
+		B27A9E37AC949A57E1B51C39 /* SpeakerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerCollectionViewCell.m; sourceTree = "<group>"; };
 		B27A9EA130AFF757F72BDC66 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B27A9F1C86B830D77578705F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2F06B64128243AF9AC3D4B0 /* libPods-specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +168,7 @@
 				B27A93855BF2107C0B4BF793 /* SpeakersViewController.h */,
 				B27A96CC784650B22E261274 /* SpeakersViewController.m */,
 				B27A9720DB26070703067460 /* SpeakersViewControllerSpec.m */,
+				B27A9974490EAF0CCE630A99 /* Speaker Cell */,
 			);
 			path = "Speakers View Controller";
 			sourceTree = "<group>";
@@ -185,6 +190,16 @@
 				B27A9D2C679D85AD77ECDB6D /* SpeakersCollectionViewDataSourceSpec.m */,
 			);
 			path = "Collection View Data Source";
+			sourceTree = "<group>";
+		};
+		B27A9974490EAF0CCE630A99 /* Speaker Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B27A946A674AB41D1AD4B020 /* SpeakerCell.h */,
+				B27A9E37AC949A57E1B51C39 /* SpeakerCollectionViewCell.m */,
+				B27A906A6CF5289BAF372867 /* SpeakerCollectionViewCell.h */,
+			);
+			path = "Speaker Cell";
 			sourceTree = "<group>";
 		};
 		B27A99AD7B4735A5672A09B5 /* Classes */ = {
@@ -366,6 +381,7 @@
 				B27A9D59259653BDEABA00A3 /* main.m in Sources */,
 				B27A9B105BBD67D80D01E3E5 /* SpeakersCollectionViewDataSource.m in Sources */,
 				B27A9A0FD94ECA88196295DE /* RootTabBarController.m in Sources */,
+				B27A97FE7901600A8818F3DA /* SpeakerCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

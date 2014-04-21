@@ -16,10 +16,6 @@ describe(@"SpeakersViewController", ^{
         viewController = nil;
     });
 
-    it(@"should have a title", ^{
-        expect(viewController.title).to.equal(@"Speakers");
-    });
-
     describe(@"speakers data source", ^{
 
         __block SpeakersCollectionViewDataSource *dataSource;
@@ -50,8 +46,38 @@ describe(@"SpeakersViewController", ^{
         });
     });
 
-    describe(@"", ^{
+    describe(@"view", ^{
 
+        __block UICollectionView *collectionView;
+
+        beforeEach(^{
+            collectionView = [viewController collectionView];
+        });
+
+        describe(@"layout", ^{
+
+            __block UICollectionViewFlowLayout *layout;
+
+            beforeEach(^{
+                layout = (UICollectionViewFlowLayout *) [collectionView collectionViewLayout];
+            });
+
+            it(@"should be a flow layout", ^{
+                expect(layout).to.beKindOf([UICollectionViewFlowLayout class]);
+            });
+
+
+            describe(@"when the view lays out it subviews", ^{
+                beforeEach(^{
+                    viewController.view.bounds = CGRectMake(0, 0, 42, 22);
+                    [viewController.view layoutIfNeeded];
+                });
+
+                it(@"should set item size on the collection view layout", ^{
+                    expect(layout.itemSize).to.equal(CGSizeMake(42, 44));
+                });
+            });
+        });
     });
 });
 

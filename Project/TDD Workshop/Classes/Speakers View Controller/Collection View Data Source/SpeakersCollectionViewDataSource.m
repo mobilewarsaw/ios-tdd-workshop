@@ -4,6 +4,8 @@
 
 
 #import "SpeakersCollectionViewDataSource.h"
+#import "SpeakerCell.h"
+#import "Speaker.h"
 
 NSString *SpeakersCollectionViewCellIdentifier = @"SpeakersCollectionViewCellIdentifier";
 
@@ -25,8 +27,10 @@ NSString *SpeakersCollectionViewCellIdentifier = @"SpeakersCollectionViewCellIde
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SpeakersCollectionViewCellIdentifier
+    UICollectionViewCell<SpeakerCell> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SpeakersCollectionViewCellIdentifier
                                                                            forIndexPath:indexPath];
+    Speaker *speaker = self.speakers[(NSUInteger) indexPath.row];
+    cell.nameLabel.text = speaker.name;
     return cell;
 }
 
