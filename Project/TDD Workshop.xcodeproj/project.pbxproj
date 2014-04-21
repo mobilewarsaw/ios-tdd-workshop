@@ -20,6 +20,7 @@
 		B27A937730478652E2F1969E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27A9EA130AFF757F72BDC66 /* Main.storyboard */; };
 		B27A954E6E7A4E4CA2F00D8A /* SpeakersViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9720DB26070703067460 /* SpeakersViewControllerSpec.m */; };
 		B27A97FE7901600A8818F3DA /* SpeakerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9E37AC949A57E1B51C39 /* SpeakerCollectionViewCell.m */; };
+		B27A9989AF15DCF4A14C8599 /* UIColor+TDDWorkshop.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A19F501F0EBB0F4CE4D /* UIColor+TDDWorkshop.m */; };
 		B27A99C4343479416F7949A1 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96CC784650B22E261274 /* SpeakersViewController.m */; };
 		B27A9A0FD94ECA88196295DE /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A97D7E26B0DD389DAA34F /* RootTabBarController.m */; };
 		B27A9ACDFF47B5C7A1E152D0 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CFFF76719DF63F378A8 /* Speaker.m */; };
@@ -66,6 +67,8 @@
 		B27A97D7E26B0DD389DAA34F /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarController.m; sourceTree = "<group>"; };
 		B27A98A82123128D7921D187 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B27A992CDED62E26B51734A3 /* SpeakersCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersCollectionViewDataSource.h; sourceTree = "<group>"; };
+		B27A9A19F501F0EBB0F4CE4D /* UIColor+TDDWorkshop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TDDWorkshop.m"; sourceTree = "<group>"; };
+		B27A9AA93D804D88540AD695 /* UIColor+TDDWorkshop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TDDWorkshop.h"; sourceTree = "<group>"; };
 		B27A9BEE6F48E39B73B68281 /* Speakers.JSON */ = {isa = PBXFileReference; lastKnownFileType = file.JSON; path = Speakers.JSON; sourceTree = "<group>"; };
 		B27A9CFFF76719DF63F378A8 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
 		B27A9D2C679D85AD77ECDB6D /* SpeakersCollectionViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersCollectionViewDataSourceSpec.m; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 				B27A98A82123128D7921D187 /* AppDelegate.m */,
 				B27A91BBD0A018454C9F8083 /* Speakers View Controller */,
 				B27A9FBE6D308D19B375886B /* Tab Bar Controllers */,
+				B27A9D44EA2C042CB566EBE4 /* General */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -221,6 +225,15 @@
 				B27A9BEE6F48E39B73B68281 /* Speakers.JSON */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B27A9D44EA2C042CB566EBE4 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B27A9A19F501F0EBB0F4CE4D /* UIColor+TDDWorkshop.m */,
+				B27A9AA93D804D88540AD695 /* UIColor+TDDWorkshop.h */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		B27A9E9ACBB64E62E3481B49 /* Supporting Files */ = {
@@ -382,6 +395,7 @@
 				B27A9B105BBD67D80D01E3E5 /* SpeakersCollectionViewDataSource.m in Sources */,
 				B27A9A0FD94ECA88196295DE /* RootTabBarController.m in Sources */,
 				B27A97FE7901600A8818F3DA /* SpeakerCollectionViewCell.m in Sources */,
+				B27A9989AF15DCF4A14C8599 /* UIColor+TDDWorkshop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

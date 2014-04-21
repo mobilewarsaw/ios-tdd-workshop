@@ -13,7 +13,8 @@
     [super awakeFromNib];
 
     SpeakersViewController *controller = [[SpeakersViewController alloc] init];
-    self.viewControllers = @[controller];
+    UINavigationController *speakersNavigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    self.viewControllers = @[speakersNavigationController];
 }
 
 @end

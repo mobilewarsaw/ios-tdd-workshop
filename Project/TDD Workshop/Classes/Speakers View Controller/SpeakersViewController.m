@@ -18,8 +18,9 @@
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] initWithSpeakers:[self defaultSpeakers]];
+        self.title = @"Soeakers";
 
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Soeakers"
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title
                                                         image:[UIImage imageNamed:@"Contact"]
                                                           tag:0];
     }
@@ -61,9 +62,6 @@
 
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *) self.collectionViewLayout;
     flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.bounds), 44);
-
-        id <UILayoutSupport> topLayoutGuide = [self topLayoutGuide];
-        flowLayout.sectionInset = UIEdgeInsetsMake(topLayoutGuide.length, 0, 0, 0);
 }
 
 #pragma mark - Overriden Setters
