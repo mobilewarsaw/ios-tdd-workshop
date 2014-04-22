@@ -18,7 +18,7 @@
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] initWithSpeakers:[self defaultSpeakers]];
-        self.title = @"Soeakers";
+        self.title = @"Speakers";
 
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title
                                                         image:[UIImage imageNamed:@"Contact"]
