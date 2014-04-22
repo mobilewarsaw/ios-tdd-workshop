@@ -19,8 +19,8 @@
 }
 
 - (void)setupParseWithOptions:(NSDictionary *)launchOptions {
-    [Parse setApplicationId:@"9vGduDxHcWaNK0HnFPLEpws7V8ShgxrWIvigOKMQ"
-                  clientKey:@"fbcn6K0CFiFWnHIbTAj9TY3FALUBsPFsn5V1FI8W"];
+    [Parse setApplicationId:@"cahiIRCtRUJ5ZnrqM9zPp60kUHsTf6KMAN1GjdPZ"
+                  clientKey:@"vXlKFINU4E3KFv8lA1KJgnVVY62dMCvHdAnoiutU"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 }
 
