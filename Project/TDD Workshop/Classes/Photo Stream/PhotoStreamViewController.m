@@ -4,6 +4,7 @@
 
 
 #import "PhotoStreamViewController.h"
+#import "PFObject.h"
 
 @interface PhotoStreamViewController ()
 @property(nonatomic, strong) UIRefreshControl *refreshControl;

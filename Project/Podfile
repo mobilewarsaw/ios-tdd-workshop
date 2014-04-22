@@ -2,6 +2,8 @@ platform :ios, '7.0'
 
 xcodeproj 'TDD Workshop'
 
+pod 'Parse-iOS-SDK', '~> 1.2'
+
 target :specs do
   link_with 'TDD WorkshopTests'
 
