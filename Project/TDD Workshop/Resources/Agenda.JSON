@@ -1,0 +1,59 @@
+[
+    {
+        "title": "TDD Introduction",
+        "type": 2,
+        "startDate": 1398506400,
+        "duration": 6300,
+        "speakers": [
+            "Paweł Dudek"
+        ]
+    },
+    {
+        "title": "Coffee & Tweet Break",
+        "type": 1,
+        "startDate": 1398512700,
+        "duration": 900,
+        "speakers": []
+    },
+    {
+        "title": "Red Green Refactor",
+        "type": 3,
+        "startDate": 1398513600,
+        "duration": 6300,
+        "speakers": [
+            "Łukasz Warchoł"
+        ]
+    },
+    {
+        "title": "Lunch",
+        "type": 1,
+        "startDate": 1398520800,
+        "duration": 3600,
+        "speakers": []
+    },
+    {
+        "title": "Test Types",
+        "type": 3,
+        "startDate": 1398524400,
+        "duration": 6300,
+        "speakers": [
+            "Łukasz Warchoł"
+        ]
+    },
+    {
+        "title": "Coffee & Tweet Break",
+        "type": 1,
+        "startDate": 1398530700,
+        "duration": 900,
+        "speakers": []
+    },
+    {
+        "title": "Legacy Code",
+        "type": 3,
+        "startDate": 1398531600,
+        "duration": 6300,
+        "speakers": [
+            "Maciej Oczko"
+        ]
+    }
+]

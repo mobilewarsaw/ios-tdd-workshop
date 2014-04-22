@@ -25,6 +25,11 @@
 		510437DA51D98A24A4CCCFDA /* Configurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5104360D9F181D89E20CA03C /* Configurator.m */; };
 		51043A753B02DB66085B38BF /* ConfigurationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043C0A7BD0895BF7021DFB /* ConfigurationFactory.m */; };
 		51043FAA43E3EC9A3D85074C /* Configurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5104360D9F181D89E20CA03C /* Configurator.m */; };
+		810866F1FE320FA1B2B2F023 /* Agenda.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 810863A399DF2C73F86CBB3C /* Agenda.JSON */; };
+		8108676EA03B11E4BCED7337 /* AgendaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 810866A920A907DBE6F5EC5D /* AgendaManager.m */; };
+		81086A50F0C929111B800947 /* AgendaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8108610087FC19F6D6DCE1B0 /* AgendaCollectionViewCell.m */; };
+		81086AE4EF71D73AEB15B7B2 /* AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 810867A0CFBF13E50E27E0FB /* AgendaViewController.m */; };
+		81086DB792F3D46FB6B0BD3C /* AgendaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086001F7ECD8482B0183A8 /* AgendaItem.m */; };
 		B27A90C1276516EF0976C721 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A98A82123128D7921D187 /* AppDelegate.m */; };
 		B27A9102589328414886245B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27A9F1C86B830D77578705F /* Images.xcassets */; };
 		B27A937730478652E2F1969E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27A9EA130AFF757F72BDC66 /* Main.storyboard */; };
@@ -72,6 +77,15 @@
 		510439AF098214E645561005 /* PhotoStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamViewController.h; sourceTree = "<group>"; };
 		51043AB14D427734F191F4B3 /* CracowConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CracowConfiguration.m; sourceTree = "<group>"; };
 		51043C0A7BD0895BF7021DFB /* ConfigurationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationFactory.m; sourceTree = "<group>"; };
+		81086001F7ECD8482B0183A8 /* AgendaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaItem.m; sourceTree = "<group>"; };
+		8108610087FC19F6D6DCE1B0 /* AgendaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaCollectionViewCell.m; sourceTree = "<group>"; };
+		810862A7610650836173E3A4 /* AgendaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaItem.h; sourceTree = "<group>"; };
+		810863480E9D2D6595776619 /* AgendaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaCollectionViewCell.h; sourceTree = "<group>"; };
+		810863A399DF2C73F86CBB3C /* Agenda.JSON */ = {isa = PBXFileReference; lastKnownFileType = file.JSON; path = Agenda.JSON; sourceTree = "<group>"; };
+		810866A920A907DBE6F5EC5D /* AgendaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaManager.m; sourceTree = "<group>"; };
+		810866FD6F0AEBB8AFD051D3 /* AgendaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaManager.h; sourceTree = "<group>"; };
+		810867A0CFBF13E50E27E0FB /* AgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaViewController.m; sourceTree = "<group>"; };
+		81086A210222A728A0723415 /* AgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaViewController.h; sourceTree = "<group>"; };
 		B1988BE4051D4DB1BD8289FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B27A906A6CF5289BAF372867 /* SpeakerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerCollectionViewCell.h; sourceTree = "<group>"; };
 		B27A91D8F9FC82A0D8F2EB73 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -219,6 +233,29 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
+		81086A58F0326DA2F6B79313 /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				810867A0CFBF13E50E27E0FB /* AgendaViewController.m */,
+				81086A210222A728A0723415 /* AgendaViewController.h */,
+				81086EAF02E10254CF9740CC /* Model */,
+				8108610087FC19F6D6DCE1B0 /* AgendaCollectionViewCell.m */,
+				810863480E9D2D6595776619 /* AgendaCollectionViewCell.h */,
+			);
+			path = Agenda;
+			sourceTree = "<group>";
+		};
+		81086EAF02E10254CF9740CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81086001F7ECD8482B0183A8 /* AgendaItem.m */,
+				810862A7610650836173E3A4 /* AgendaItem.h */,
+				810866A920A907DBE6F5EC5D /* AgendaManager.m */,
+				810866FD6F0AEBB8AFD051D3 /* AgendaManager.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B27A91BBD0A018454C9F8083 /* Speakers View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +308,7 @@
 				B27A9D44EA2C042CB566EBE4 /* General */,
 				51043080C62EC0FA452F8F09 /* Photo Stream */,
 				5104304FE94993E43B18A319 /* App Configuration */,
+				81086A58F0326DA2F6B79313 /* Agenda */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -282,6 +320,7 @@
 				B27A9EA130AFF757F72BDC66 /* Main.storyboard */,
 				B27A9BEE6F48E39B73B68281 /* Speakers.JSON */,
 				5104345744CA86EDD8BC6565 /* Localizable.strings */,
+				810863A399DF2C73F86CBB3C /* Agenda.JSON */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -400,6 +439,7 @@
 				B27A937730478652E2F1969E /* Main.storyboard in Resources */,
 				B27A9E1107889ABC8D32C72F /* Speakers.JSON in Resources */,
 				510434A8BD8A51FD6A30E5E7 /* Localizable.strings in Resources */,
+				810866F1FE320FA1B2B2F023 /* Agenda.JSON in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +535,10 @@
 				51043FAA43E3EC9A3D85074C /* Configurator.m in Sources */,
 				510437B3AFF9B4DFB61D4D37 /* ConfigurationFactory.m in Sources */,
 				510431791B37A9A99385A641 /* CracowConfiguration.m in Sources */,
+				81086AE4EF71D73AEB15B7B2 /* AgendaViewController.m in Sources */,
+				81086DB792F3D46FB6B0BD3C /* AgendaItem.m in Sources */,
+				8108676EA03B11E4BCED7337 /* AgendaManager.m in Sources */,
+				81086A50F0C929111B800947 /* AgendaCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
