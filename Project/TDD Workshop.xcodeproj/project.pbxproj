@@ -17,19 +17,28 @@
 		43C5D4E11904429F002D1766 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43C5D4DF1904429F002D1766 /* InfoPlist.strings */; };
 		43C5D4ED19046E83002D1766 /* Speakers.JSON in Resources */ = {isa = PBXBuildFile; fileRef = B27A9BEE6F48E39B73B68281 /* Speakers.JSON */; };
 		510431791B37A9A99385A641 /* CracowConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043AB14D427734F191F4B3 /* CracowConfiguration.m */; };
+		510431F36EDABCA7A7E84118 /* StreamItemCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 510434BAAD88EC50EEB039B1 /* StreamItemCreator.m */; };
 		51043272B3AC04BC4C345854 /* CracowConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043AB14D427734F191F4B3 /* CracowConfiguration.m */; };
+		5104331ABB398764EB039A38 /* StreamItemUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 510437936BA1CFAE94AA5BBB /* StreamItemUploader.m */; };
 		510434A8BD8A51FD6A30E5E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5104345744CA86EDD8BC6565 /* Localizable.strings */; };
+		510434B6A43EA784E14ADCCE /* StreamItemUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 510437936BA1CFAE94AA5BBB /* StreamItemUploader.m */; };
+		51043516EF8246EF55CD424E /* StreamItemCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 510434BAAD88EC50EEB039B1 /* StreamItemCreator.m */; };
+		5104365C827422284475A68C /* StreamItemDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043B6325427C8FAF2CAAEE /* StreamItemDownloader.m */; };
 		510436DEA3790C3EBDBF7C87 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5104345744CA86EDD8BC6565 /* Localizable.strings */; };
 		510437B3AFF9B4DFB61D4D37 /* ConfigurationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043C0A7BD0895BF7021DFB /* ConfigurationFactory.m */; };
 		510437C9E9173E0AEE1BF5D9 /* PhotoStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043207E6DA7C07E54F2B88 /* PhotoStreamViewController.m */; };
 		510437DA51D98A24A4CCCFDA /* Configurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5104360D9F181D89E20CA03C /* Configurator.m */; };
+		510439836AE875DB86DFDB46 /* StreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 510436CAD5C76AB731F5FC76 /* StreamItem.m */; };
 		51043A753B02DB66085B38BF /* ConfigurationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043C0A7BD0895BF7021DFB /* ConfigurationFactory.m */; };
+		51043C07AA1795B94AD8E814 /* StreamItemDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043B6325427C8FAF2CAAEE /* StreamItemDownloader.m */; };
+		51043C783E82165202F605B2 /* StreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 510436CAD5C76AB731F5FC76 /* StreamItem.m */; };
 		51043FAA43E3EC9A3D85074C /* Configurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5104360D9F181D89E20CA03C /* Configurator.m */; };
 		810866F1FE320FA1B2B2F023 /* Agenda.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 810863A399DF2C73F86CBB3C /* Agenda.JSON */; };
 		8108676EA03B11E4BCED7337 /* AgendaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 810866A920A907DBE6F5EC5D /* AgendaManager.m */; };
 		81086A50F0C929111B800947 /* AgendaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8108610087FC19F6D6DCE1B0 /* AgendaCollectionViewCell.m */; };
 		81086AE4EF71D73AEB15B7B2 /* AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 810867A0CFBF13E50E27E0FB /* AgendaViewController.m */; };
 		81086DB792F3D46FB6B0BD3C /* AgendaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086001F7ECD8482B0183A8 /* AgendaItem.m */; };
+		944AF0D51907124D00C36DA1 /* PhotoStreamViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 510430351EDD2ECC10DB5F0C /* PhotoStreamViewControllerSpec.m */; };
 		B27A90C1276516EF0976C721 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A98A82123128D7921D187 /* AppDelegate.m */; };
 		B27A9102589328414886245B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27A9F1C86B830D77578705F /* Images.xcassets */; };
 		B27A937730478652E2F1969E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27A9EA130AFF757F72BDC66 /* Main.storyboard */; };
@@ -67,16 +76,25 @@
 		43C5D4E01904429F002D1766 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43C5D4EC190447DE002D1766 /* Specs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Specs.h; sourceTree = "<group>"; };
 		4442B29770594D57863624A3 /* Pods-specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-specs.xcconfig"; path = "Pods/Pods-specs.xcconfig"; sourceTree = "<group>"; };
+		510430351EDD2ECC10DB5F0C /* PhotoStreamViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewControllerSpec.m; sourceTree = "<group>"; };
 		51043207E6DA7C07E54F2B88 /* PhotoStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewController.m; sourceTree = "<group>"; };
+		510432AAC735F6797D1522FB /* StreamItemCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItemCreator.h; sourceTree = "<group>"; };
 		5104335135485178594E1772 /* Configurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configurator.h; sourceTree = "<group>"; };
+		510433ABB1897A0420B539B4 /* StreamItemDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItemDownloader.h; sourceTree = "<group>"; };
 		510433D6C025A50F0EFD5946 /* ConfigurationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationFactory.h; sourceTree = "<group>"; };
 		5104345744CA86EDD8BC6565 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		510434BAAD88EC50EEB039B1 /* StreamItemCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemCreator.m; sourceTree = "<group>"; };
 		5104360D9F181D89E20CA03C /* Configurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configurator.m; sourceTree = "<group>"; };
+		510436CAD5C76AB731F5FC76 /* StreamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItem.m; sourceTree = "<group>"; };
+		510436F9CF147A9F0DE5D97B /* StreamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItem.h; sourceTree = "<group>"; };
+		510437936BA1CFAE94AA5BBB /* StreamItemUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemUploader.m; sourceTree = "<group>"; };
 		5104384BE0B04D91B48B5A49 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		510438A1415624392BB038A8 /* CracowConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CracowConfiguration.h; sourceTree = "<group>"; };
 		510439AF098214E645561005 /* PhotoStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamViewController.h; sourceTree = "<group>"; };
 		51043AB14D427734F191F4B3 /* CracowConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CracowConfiguration.m; sourceTree = "<group>"; };
+		51043B6325427C8FAF2CAAEE /* StreamItemDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemDownloader.m; sourceTree = "<group>"; };
 		51043C0A7BD0895BF7021DFB /* ConfigurationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationFactory.m; sourceTree = "<group>"; };
+		51043F16E2B9F624D87DD1E0 /* StreamItemUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItemUploader.h; sourceTree = "<group>"; };
 		81086001F7ECD8482B0183A8 /* AgendaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaItem.m; sourceTree = "<group>"; };
 		8108610087FC19F6D6DCE1B0 /* AgendaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaCollectionViewCell.m; sourceTree = "<group>"; };
 		810862A7610650836173E3A4 /* AgendaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaItem.h; sourceTree = "<group>"; };
@@ -220,6 +238,8 @@
 			children = (
 				51043207E6DA7C07E54F2B88 /* PhotoStreamViewController.m */,
 				510439AF098214E645561005 /* PhotoStreamViewController.h */,
+				510430351EDD2ECC10DB5F0C /* PhotoStreamViewControllerSpec.m */,
+				51043DE3BA6425BDC5EDDCAE /* Model */,
 			);
 			path = "Photo Stream";
 			sourceTree = "<group>";
@@ -231,6 +251,21 @@
 				510438A1415624392BB038A8 /* CracowConfiguration.h */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		51043DE3BA6425BDC5EDDCAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				510437936BA1CFAE94AA5BBB /* StreamItemUploader.m */,
+				51043F16E2B9F624D87DD1E0 /* StreamItemUploader.h */,
+				510436CAD5C76AB731F5FC76 /* StreamItem.m */,
+				510436F9CF147A9F0DE5D97B /* StreamItem.h */,
+				510434BAAD88EC50EEB039B1 /* StreamItemCreator.m */,
+				510432AAC735F6797D1522FB /* StreamItemCreator.h */,
+				51043B6325427C8FAF2CAAEE /* StreamItemDownloader.m */,
+				510433ABB1897A0420B539B4 /* StreamItemDownloader.h */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		81086A58F0326DA2F6B79313 /* Agenda */ = {
@@ -420,8 +455,6 @@
 			mainGroup = 43C5D4A81904429F002D1766;
 			productRefGroup = 43C5D4B21904429F002D1766 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				43C5D4B01904429F002D1766 /* TDD Workshop */,
@@ -539,6 +572,10 @@
 				81086DB792F3D46FB6B0BD3C /* AgendaItem.m in Sources */,
 				8108676EA03B11E4BCED7337 /* AgendaManager.m in Sources */,
 				81086A50F0C929111B800947 /* AgendaCollectionViewCell.m in Sources */,
+				510434B6A43EA784E14ADCCE /* StreamItemUploader.m in Sources */,
+				51043C783E82165202F605B2 /* StreamItem.m in Sources */,
+				510431F36EDABCA7A7E84118 /* StreamItemCreator.m in Sources */,
+				5104365C827422284475A68C /* StreamItemDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,9 +585,14 @@
 			files = (
 				B27A954E6E7A4E4CA2F00D8A /* SpeakersViewControllerSpec.m in Sources */,
 				B27A9D2A610E08BA7B2FF7D4 /* SpeakersCollectionViewDataSourceSpec.m in Sources */,
+				944AF0D51907124D00C36DA1 /* PhotoStreamViewControllerSpec.m in Sources */,
 				510437DA51D98A24A4CCCFDA /* Configurator.m in Sources */,
 				51043A753B02DB66085B38BF /* ConfigurationFactory.m in Sources */,
 				51043272B3AC04BC4C345854 /* CracowConfiguration.m in Sources */,
+				5104331ABB398764EB039A38 /* StreamItemUploader.m in Sources */,
+				510439836AE875DB86DFDB46 /* StreamItem.m in Sources */,
+				51043516EF8246EF55CD424E /* StreamItemCreator.m in Sources */,
+				51043C07AA1795B94AD8E814 /* StreamItemDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

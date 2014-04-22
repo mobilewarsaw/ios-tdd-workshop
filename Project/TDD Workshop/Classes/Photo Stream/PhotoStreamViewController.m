@@ -5,11 +5,15 @@
 
 #import "PhotoStreamViewController.h"
 #import "PFObject.h"
+#import "StreamItemUploader.h"
+#import "StreamItemCreator.h"
+#import "StreamItemDownloader.h"
+#import "StreamItem.h"
 
 @interface PhotoStreamViewController ()
 @property(nonatomic, strong) UIRefreshControl *refreshControl;
+@property(nonatomic, strong) NSArray *streamItems;
 @end
-
 
 @implementation PhotoStreamViewController
 
@@ -23,10 +27,18 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
+        self.streamItemUploader = [StreamItemUploader new];
+        self.streamItemCreator = [StreamItemCreator new];
+        self.streamItemDownloader = [StreamItemDownloader new];
+        self.streamItemDownloader.delegate = self;
+
         self.title = NSLocalizedString(@"Photo Stream", @"Photo Stream");
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title
-                                                        image:[[UIImage imageNamed:@"PhotoStream"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+                                                        image:[UIImage imageNamed:@"PhotoStream"]
                                                           tag:0];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                               target:self
+                                                                                               action:@selector(addBarButtonItemPressed:)];
     }
     return self;
 }
@@ -53,19 +65,34 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 
 #pragma mark - Actions
 
+- (void)addBarButtonItemPressed:(UIBarButtonItem *)sender {
+    StreamItem *streamItem = [self.streamItemCreator createStreamItem];
+    [self.streamItemUploader uploadStreamItem:streamItem];
+}
+
 - (void)didPullToRefresh:(UIRefreshControl *)sender {
+    [self.streamItemDownloader downloadStreamItems];
+}
+
+#pragma mark - StreamItemDownloader
+
+- (void)streamItemDownloader:(StreamItemDownloader *)streamItemDownloader didDownloadItems:(NSArray *)items {
+    self.streamItems = items;
+    [self.collectionView reloadData];
     [self.refreshControl endRefreshing];
 }
 
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return [self.streamItems count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoStreamViewControllerCellId forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    StreamItem *streamItem = self.streamItems[(NSUInteger) indexPath.item];
+    UIImage *image = [[UIImage alloc] initWithData:streamItem.data];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:image];
     return cell;
 }
 
