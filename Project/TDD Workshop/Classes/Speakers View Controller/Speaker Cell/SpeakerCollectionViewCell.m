@@ -14,24 +14,50 @@
     self = [super initWithFrame:frame];
     if (self) {
         _nameLabel = [[UILabel alloc] init];
+        [self.nameLabel setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
         [self.contentView addSubview:self.nameLabel];
 
-        self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        _imageView = [[UIImageView alloc] init];
+        self.imageView.image = [UIImage imageNamed:@"Contact"];
 
-        NSDictionary *views = @{@"name" : self.nameLabel};
+        [self.imageView setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+        [self.imageView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+        [[self contentView] addSubview:self.imageView];
 
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[name]-|"
-                                                                                 options:0
-                                                                                 metrics:nil
-                                                                                   views:views]];
-
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(5)-[name]-(5)-|"
-                                                                                         options:0
-                                                                                         metrics:nil
-                                                                                           views:views]];
+        [self setupConstraints];
     }
 
     return self;
+}
+
+#pragma mark -
+
+- (void)setupConstraints {
+    self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    NSDictionary *views = @{@"name" : self.nameLabel, @"image" : self.imageView};
+
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(5)-[image]-(5)-[name]-|"
+                                                                             options:NSLayoutFormatAlignAllCenterY
+                                                                             metrics:nil
+                                                                               views:views]];
+
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.nameLabel
+                                                                 attribute:NSLayoutAttributeCenterY
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.contentView
+                                                                 attribute:NSLayoutAttributeCenterY
+                                                                multiplier:1
+                                                                  constant:0]];
+
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.imageView
+                                                                 attribute:NSLayoutAttributeCenterY
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.contentView
+                                                                 attribute:NSLayoutAttributeCenterY
+                                                                multiplier:1
+                                                                  constant:0]];
 }
 
 @end

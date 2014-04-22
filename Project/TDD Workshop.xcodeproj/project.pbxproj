@@ -60,6 +60,7 @@
 		B27A9989AF15DCF4A14C8599 /* UIColor+TDDWorkshop.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A19F501F0EBB0F4CE4D /* UIColor+TDDWorkshop.m */; };
 		B27A99C4343479416F7949A1 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96CC784650B22E261274 /* SpeakersViewController.m */; };
 		B27A9A0FD94ECA88196295DE /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A97D7E26B0DD389DAA34F /* RootTabBarController.m */; };
+		B27A9A828140E48431A9F462 /* SpeakerCollectionViewCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9D22A0F1383379E96210 /* SpeakerCollectionViewCellSpec.m */; };
 		B27A9ACDFF47B5C7A1E152D0 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CFFF76719DF63F378A8 /* Speaker.m */; };
 		B27A9B105BBD67D80D01E3E5 /* SpeakersCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92AF299A933F6819BD8F /* SpeakersCollectionViewDataSource.m */; };
 		B27A9D2A610E08BA7B2FF7D4 /* SpeakersCollectionViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9D2C679D85AD77ECDB6D /* SpeakersCollectionViewDataSourceSpec.m */; };
@@ -150,6 +151,7 @@
 		B27A9AA93D804D88540AD695 /* UIColor+TDDWorkshop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TDDWorkshop.h"; sourceTree = "<group>"; };
 		B27A9BEE6F48E39B73B68281 /* Speakers.JSON */ = {isa = PBXFileReference; lastKnownFileType = file.JSON; path = Speakers.JSON; sourceTree = "<group>"; };
 		B27A9CFFF76719DF63F378A8 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
+		B27A9D22A0F1383379E96210 /* SpeakerCollectionViewCellSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerCollectionViewCellSpec.m; sourceTree = "<group>"; };
 		B27A9D2C679D85AD77ECDB6D /* SpeakersCollectionViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersCollectionViewDataSourceSpec.m; sourceTree = "<group>"; };
 		B27A9E37AC949A57E1B51C39 /* SpeakerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerCollectionViewCell.m; sourceTree = "<group>"; };
 		B27A9EA130AFF757F72BDC66 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				B27A946A674AB41D1AD4B020 /* SpeakerCell.h */,
 				B27A9E37AC949A57E1B51C39 /* SpeakerCollectionViewCell.m */,
 				B27A906A6CF5289BAF372867 /* SpeakerCollectionViewCell.h */,
+				B27A9D22A0F1383379E96210 /* SpeakerCollectionViewCellSpec.m */,
 			);
 			path = "Speaker Cell";
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				B27A954E6E7A4E4CA2F00D8A /* SpeakersViewControllerSpec.m in Sources */,
 				863F85FC1909ACFB00DD3FE4 /* AgendaViewControllerSpec.m in Sources */,
 				B27A9D2A610E08BA7B2FF7D4 /* SpeakersCollectionViewDataSourceSpec.m in Sources */,
+				B27A9A828140E48431A9F462 /* SpeakerCollectionViewCellSpec.m in Sources */,
 				944AF0D51907124D00C36DA1 /* PhotoStreamViewControllerSpec.m in Sources */,
 				510437DA51D98A24A4CCCFDA /* Configurator.m in Sources */,
 				51043A753B02DB66085B38BF /* ConfigurationFactory.m in Sources */,
