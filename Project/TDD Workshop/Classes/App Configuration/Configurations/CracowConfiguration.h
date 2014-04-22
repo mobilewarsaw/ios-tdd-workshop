@@ -4,7 +4,8 @@
 
 
 #import <Foundation/Foundation.h>
+#import "Configuration.h"
 
 
-@interface CracowConfiguration : NSObject
+@interface CracowConfiguration : NSObject <Configuration>
 @end

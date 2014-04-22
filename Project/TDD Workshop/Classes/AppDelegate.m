@@ -8,20 +8,22 @@
 
 #import "AppDelegate.h"
 #import "UIColor+TDDWorkshop.h"
+#import "Configurator.h"
+#import "ConfigurationFactory.h"
 #import <Parse/Parse.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self configureAppWithLaunchOptions:launchOptions];
     [self modifyAppearance];
-    [self setupParseWithOptions:launchOptions];
     return YES;
 }
 
-- (void)setupParseWithOptions:(NSDictionary *)launchOptions {
-    [Parse setApplicationId:@"cahiIRCtRUJ5ZnrqM9zPp60kUHsTf6KMAN1GjdPZ"
-                  clientKey:@"vXlKFINU4E3KFv8lA1KJgnVVY62dMCvHdAnoiutU"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+- (void)configureAppWithLaunchOptions:(NSDictionary *)launchOptions {
+    Configurator *configurator = [Configurator new];
+    ConfigurationFactory *configurationFactory = [ConfigurationFactory new];
+    [configurator configureAppUsingConfiguration:[configurationFactory applicationConfiguration] launchOptions:launchOptions];
 }
 
 - (void)modifyAppearance {

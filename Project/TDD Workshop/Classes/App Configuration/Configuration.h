@@ -6,4 +6,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol Configuration <NSObject>
+@property(nonatomic, strong) NSString *parseApplicationId;
+@property(nonatomic, strong) NSString *parseClientId;
 @end

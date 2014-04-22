@@ -9,5 +9,5 @@
 
 
 @interface Configurator : NSObject
-- (void)configureAppUsingConfiguration:(id <Configuration>)configuration;
+- (void)configureAppUsingConfiguration:(id <Configuration>)configuration launchOptions:(NSDictionary *)launchOptions;
 @end
