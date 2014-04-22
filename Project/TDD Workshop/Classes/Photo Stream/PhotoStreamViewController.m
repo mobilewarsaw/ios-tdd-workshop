@@ -37,11 +37,6 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
     [super loadView];
     [self setupCollectionView];
     [self setupRefreshControl];
-
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
-
 }
 
 - (void)setupCollectionView {
