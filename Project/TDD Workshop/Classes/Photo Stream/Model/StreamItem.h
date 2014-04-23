@@ -10,4 +10,5 @@
 @interface StreamItem : NSObject
 @property(nonatomic, strong) NSData *data;
 @property(nonatomic, strong) NSString *title;
+@property(nonatomic, assign) CGSize size;
 @end

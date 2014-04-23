@@ -5,7 +5,6 @@ inhibit_all_warnings!
 xcodeproj 'TDD Workshop'
 
 pod 'Parse-iOS-SDK', '~> 1.2'
-pod 'UIImage-Resize', '~> 1.0'
 
 target :specs do
   link_with 'TDD WorkshopTests'

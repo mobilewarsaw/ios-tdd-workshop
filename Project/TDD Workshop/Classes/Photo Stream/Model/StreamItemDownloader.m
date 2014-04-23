@@ -36,6 +36,7 @@
             //TODO improve this!
             streamItem.title = object[@"title"];
             streamItem.data = object[@"data"];
+            streamItem.size = CGSizeMake([object[@"width"] floatValue], [object[@"height"] floatValue]);
             [streamItems addObject:streamItem];
         }
         [weakSelf.delegate streamItemDownloader:self didDownloadItems:streamItems];

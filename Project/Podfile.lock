@@ -8,7 +8,6 @@ PODS:
   - Parse-iOS-SDK (1.2.19):
     - Facebook-iOS-SDK (~> 3.7)
   - Specta (0.2.1)
-  - UIImage-Resize (1.0.1)
 
 DEPENDENCIES:
   - Expecta
@@ -16,7 +15,6 @@ DEPENDENCIES:
   - OCMockito
   - Parse-iOS-SDK (~> 1.2)
   - Specta
-  - UIImage-Resize (~> 1.0)
 
 SPEC CHECKSUMS:
   Expecta: 322f1dc42610106a5ba9871b4924cf1635d80833
@@ -26,6 +24,5 @@ SPEC CHECKSUMS:
   OCMockito: 050fca9528760faa8b5fafc82faad9d54f0864c0
   Parse-iOS-SDK: 48e366fb9a8956c4e50d93cfd16243176938fae1
   Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
-  UIImage-Resize: b71ddbd27e5a29c2776df5c55b766928050437b2
 
 COCOAPODS: 0.32.1

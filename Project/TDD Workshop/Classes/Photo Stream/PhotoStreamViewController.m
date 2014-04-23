@@ -5,6 +5,8 @@
 
 #import "PhotoStreamViewController.h"
 #import "StreamItem.h"
+#import "PhotoStreamLayout.h"
+#import "PhotoStreamCell.h"
 
 @interface PhotoStreamViewController ()
 @property(nonatomic, strong) UIRefreshControl *refreshControl;
@@ -20,9 +22,10 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 #pragma mark - Object life cycle
 
 - (id)init {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    PhotoStreamLayout *layout = [[PhotoStreamLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
+
         self.streamItemUploader = [StreamItemUploader uploaderWithDelegate:self];
         self.streamItemCreator = [StreamItemCreator creatorWithDelegate:self];
         self.streamItemDownloader = [StreamItemDownloader downloaderWithDelegate:self];
@@ -53,7 +56,7 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 
 - (void)setupCollectionView {
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:PhotoStreamViewControllerCellId];
+    [self.collectionView registerClass:[PhotoStreamCell class] forCellWithReuseIdentifier:PhotoStreamViewControllerCellId];
 }
 
 - (void)setupRefreshControl {
@@ -80,12 +83,10 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoStreamViewControllerCellId forIndexPath:indexPath];
+    PhotoStreamCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoStreamViewControllerCellId forIndexPath:indexPath];
     StreamItem *streamItem = self.streamItems[(NSUInteger) indexPath.item];
     UIImage *image = [[UIImage alloc] initWithData:streamItem.data];
-    UIImageView *view = [[UIImageView alloc] initWithImage:image];
-    view.contentMode = UIViewContentModeScaleAspectFit;
-    cell.backgroundView = view;
+    cell.imageView.image = image;
     return cell;
 }
 

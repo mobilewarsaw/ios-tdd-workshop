@@ -5,7 +5,6 @@
 
 #import "StreamItemCreator.h"
 #import "StreamItem.h"
-#import "UIImage+Resize.h"
 #import "ImageResizer.h"
 
 @interface StreamItemCreator ()
@@ -24,7 +23,7 @@
         self.delegate = delegate;
         self.imageResizer = [ImageResizer new];
         self.imageQuality = 0.7f;
-        self.maxImageDimension = 150.0f;
+        self.maxImageDimension = 300.0f;
     }
     return self;
 }
@@ -95,6 +94,8 @@
     StreamItem *streamItem = [StreamItem new];
     streamItem.title = @"DEBUG";
     streamItem.data = UIImageJPEGRepresentation(resizedImage, self.imageQuality);
+//    NSLog(@"image size:[%@]",[NSByteCountFormatter stringFromByteCount:streamItem.data.length countStyle:NSByteCountFormatterCountStyleFile]);
+    streamItem.size = resizedImage.size;
     [self.delegate streamItemCreator:self didCreateItem:streamItem];
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
