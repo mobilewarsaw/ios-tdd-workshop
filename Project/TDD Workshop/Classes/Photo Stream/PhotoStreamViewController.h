@@ -5,13 +5,14 @@
 
 #import <Foundation/Foundation.h>
 #import "StreamItemDownloader.h"
+#import "StreamItemCreator.h"
+#import "StreamItemUploader.h"
 
 @class StreamItemUploader;
 @class StreamItemCreator;
 @class StreamItemDownloader;
 
-
-@interface PhotoStreamViewController : UICollectionViewController <StreamItemDownloader>
+@interface PhotoStreamViewController : UICollectionViewController <StreamItemDownloaderDelegate, StreamItemCreatorDelegate, StreamItemUploaderDelegate>
 @property(nonatomic, strong) StreamItemUploader *streamItemUploader;
 @property(nonatomic, strong) StreamItemCreator *streamItemCreator;
 @property(nonatomic, strong) StreamItemDownloader *streamItemDownloader;

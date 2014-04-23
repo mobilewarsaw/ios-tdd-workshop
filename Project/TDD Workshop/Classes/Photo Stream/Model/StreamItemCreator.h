@@ -6,8 +6,23 @@
 #import <Foundation/Foundation.h>
 
 @class StreamItem;
+@protocol StreamItemCreatorDelegate;
+@class ImageResizer;
+
+@interface StreamItemCreator : NSObject <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@property(nonatomic, weak) id <StreamItemCreatorDelegate> delegate;
+- (instancetype)initWithDelegate:(id <StreamItemCreatorDelegate>)delegate;
++ (instancetype)creatorWithDelegate:(id <StreamItemCreatorDelegate>)delegate;
 
 
-@interface StreamItemCreator : NSObject
-- (StreamItem *)createStreamItem;
+- (void)createStreamItem;
+
+@end
+
+@protocol StreamItemCreatorDelegate <NSObject>
+@required
+- (void)streamItemCreator:(StreamItemCreator *)streamItemCreator didCreateItem:(StreamItem *)streamItem;
+
+- (UIViewController *)viewControllerToPresentOnImagePickerForStreamItemCreator:(StreamItemCreator *)streamItemCreator;
+- (UITabBar *)tabBarToPresentOnImagePickOptionsForStreamItemCreator:(StreamItemCreator *)streamItemCreator;
 @end

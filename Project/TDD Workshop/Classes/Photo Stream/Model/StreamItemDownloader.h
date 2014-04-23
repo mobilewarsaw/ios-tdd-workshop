@@ -5,16 +5,19 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol StreamItemDownloader;
+@protocol StreamItemDownloaderDelegate;
 
 @interface StreamItemDownloader : NSObject
 
-@property(nonatomic, weak) id <StreamItemDownloader> delegate;
+@property(nonatomic, weak) id <StreamItemDownloaderDelegate> delegate;
+- (instancetype)initWithDelegate:(id <StreamItemDownloaderDelegate>)delegate;
++ (instancetype)downloaderWithDelegate:(id <StreamItemDownloaderDelegate>)delegate;
+
 
 - (void)downloadStreamItems;
 
 @end
 
-@protocol StreamItemDownloader <NSObject>
+@protocol StreamItemDownloaderDelegate <NSObject>
 - (void)streamItemDownloader:(StreamItemDownloader *)streamItemDownloader didDownloadItems:(NSArray *)items;
 @end

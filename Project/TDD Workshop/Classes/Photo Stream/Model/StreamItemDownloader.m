@@ -10,6 +10,22 @@
 
 @implementation StreamItemDownloader
 
+#pragma mark - Object life cycle
+
+- (instancetype)initWithDelegate:(id <StreamItemDownloaderDelegate>)delegate {
+    self = [super init];
+    if (self) {
+        self.delegate = delegate;
+    }
+    return self;
+}
+
++ (instancetype)downloaderWithDelegate:(id <StreamItemDownloaderDelegate>)delegate {
+    return [[self alloc] initWithDelegate:delegate];
+}
+
+#pragma mark - Public methods
+
 - (void)downloadStreamItems {
     PFQuery *query = [PFQuery queryWithClassName:NSStringFromClass([StreamItem class])];
     StreamItemDownloader * __weak weakSelf = self;
@@ -17,6 +33,7 @@
         NSMutableArray *streamItems = [NSMutableArray new];
         for (PFObject *object in objects) {
             StreamItem *streamItem = [StreamItem new];
+            //TODO improve this!
             streamItem.title = object[@"title"];
             streamItem.data = object[@"data"];
             [streamItems addObject:streamItem];

@@ -48,3 +48,9 @@
 #define COCOAPODS_VERSION_MINOR_Specta 2
 #define COCOAPODS_VERSION_PATCH_Specta 1
 
+// UIImage-Resize
+#define COCOAPODS_POD_AVAILABLE_UIImage_Resize
+#define COCOAPODS_VERSION_MAJOR_UIImage_Resize 1
+#define COCOAPODS_VERSION_MINOR_UIImage_Resize 0
+#define COCOAPODS_VERSION_PATCH_UIImage_Resize 1
+
