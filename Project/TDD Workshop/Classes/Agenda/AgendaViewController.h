@@ -7,9 +7,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class AgendaProvider;
+@class AgendaCollectionViewDataSource;
+
 
 @interface AgendaViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
-+ (instancetype)defaultController;
+@property(nonatomic, strong) AgendaProvider *agendaProvider;
+@property(nonatomic, strong) AgendaCollectionViewDataSource *agendaDataSource;
 
 @end

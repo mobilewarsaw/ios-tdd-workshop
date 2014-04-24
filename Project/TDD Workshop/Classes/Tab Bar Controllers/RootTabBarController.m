@@ -20,7 +20,7 @@
     PhotoStreamViewController *photoStreamViewController = [PhotoStreamViewController new];
     UINavigationController *photoStreamNavigationController = [[UINavigationController alloc] initWithRootViewController:photoStreamViewController];
     
-    AgendaViewController *agendaViewController = [AgendaViewController defaultController];
+    AgendaViewController *agendaViewController = [AgendaViewController new];
     UINavigationController *agendaNavigationController = [[UINavigationController alloc] initWithRootViewController:agendaViewController];
 
     self.viewControllers = @[speakersNavigationController, photoStreamNavigationController, agendaNavigationController];

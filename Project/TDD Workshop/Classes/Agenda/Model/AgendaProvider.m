@@ -1,28 +1,15 @@
-#import "AgendaManager.h"
+#import "AgendaProvider.h"
 #import "Speaker.h"
 #import "AgendaItem.h"
 
 
-@implementation AgendaManager {
-
-}
-
-+ (instancetype)sharedInstance {
-    static AgendaManager *sharedManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedManager = [self new];
-    });
-    return sharedManager;
-}
+@implementation AgendaProvider
 
 - (id)init {
     self = [super init];
     if (self) {
         _agendaItems = [self initialAgenda];
-        _title = @"Agenda";
     }
-
     return self;
 }
 
@@ -49,16 +36,6 @@
     }
 
     return agendaItems;
-}
-
-- (UIColor *)colorForType:(AgendaItemType)type {
-    NSDictionary *colors = @{
-            @(AgendaItemTypeUnknown) : [UIColor grayColor],
-            @(AgendaItemTypeBreak) : [UIColor greenColor],
-            @(AgendaItemTypeLecture) : [UIColor yellowColor],
-            @(AgendaItemTypeWorkshop) : [UIColor blueColor],
-    };
-    return colors[@(type)];
 }
 
 @end

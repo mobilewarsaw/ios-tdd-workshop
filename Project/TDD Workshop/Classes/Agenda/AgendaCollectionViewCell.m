@@ -1,6 +1,5 @@
 #import "AgendaCollectionViewCell.h"
 #import "AgendaItem.h"
-#import "AgendaManager.h"
 #import "Speaker.h"
 
 
@@ -58,7 +57,6 @@
     [formatter setLocale:[NSLocale currentLocale]];
 
     self.titleLabel.text = item.title;
-    self.typeView.backgroundColor = [[AgendaManager sharedInstance] colorForType:item.type];
     self.startDateLabel.text = [formatter stringFromDate:item.startDate];
     self.durationLabel.text = [NSString stringWithFormat:@"%.0fm", item.duration / 60];
 

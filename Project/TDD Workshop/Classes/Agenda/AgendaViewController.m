@@ -6,28 +6,22 @@
 //
 
 #import "AgendaViewController.h"
-#import "AgendaManager.h"
-#import "AgendaCollectionViewCell.h"
+#import "AgendaProvider.h"
+#import "AgendaCollectionViewDataSource.h"
 
 
-@implementation AgendaViewController {
+@implementation AgendaViewController
 
-}
-
-+ (instancetype)defaultController {
-    return [[self alloc] initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
-}
-
-- (id)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
+- (id)init {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
-        NSString *title = [AgendaManager sharedInstance].title;
-        self.title = title;
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title
-                                                        image:[[UIImage imageNamed:[title lowercaseString]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
-                                                          tag:0];
-    }
+        self.title = @"Agenda";
+        self.tabBarItem.image = [UIImage imageNamed:@"agenda"];
 
+        self.agendaProvider = [AgendaProvider new];
+        self.agendaDataSource = [[AgendaCollectionViewDataSource alloc] initWithProvider:self.agendaProvider];
+    }
     return self;
 }
 
@@ -39,31 +33,13 @@
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.alwaysBounceVertical = YES;
     self.collectionView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
-
-    [self.collectionView registerClass:[AgendaCollectionViewCell class]
-            forCellWithReuseIdentifier:NSStringFromClass([AgendaCollectionViewCell class])];
 }
 
-#pragma mark - Data Source & Delegate
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [AgendaManager sharedInstance].agendaItems.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    AgendaCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([AgendaCollectionViewCell class])
-                                                                                   forIndexPath:indexPath];
-    AgendaItem *agendaItem = [AgendaManager sharedInstance].agendaItems[(NSUInteger) indexPath.item];
-    [cell configureForAgendaItem:agendaItem];
-    return cell;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    AgendaItem *agendaItem = [AgendaManager sharedInstance].agendaItems[(NSUInteger) indexPath.item];
-    if (agendaItem.type == AgendaItemTypeBreak) {
-        return CGSizeMake(CGRectGetWidth(self.view.bounds), 48);
-    }
-    return CGSizeMake(CGRectGetWidth(self.view.bounds), 68);
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *) self.collectionViewLayout;
+    flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.bounds), 66);
 }
 
 @end
