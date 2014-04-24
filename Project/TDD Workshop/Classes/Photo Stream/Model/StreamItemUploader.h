@@ -9,11 +9,14 @@
 @protocol StreamItemUploaderDelegate;
 
 @interface StreamItemUploader : NSObject
+
 @property(nonatomic, weak) id <StreamItemUploaderDelegate> delegate;
+
 - (instancetype)initWithDelegate:(id <StreamItemUploaderDelegate>)delegate;
 + (instancetype)uploaderWithDelegate:(id <StreamItemUploaderDelegate>)delegate;
 
 - (void)uploadStreamItem:(StreamItem *)streamItem;
+
 @end
 
 @protocol StreamItemUploaderDelegate <NSObject>

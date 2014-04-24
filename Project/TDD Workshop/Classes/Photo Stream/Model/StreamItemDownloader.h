@@ -10,9 +10,9 @@
 @interface StreamItemDownloader : NSObject
 
 @property(nonatomic, weak) id <StreamItemDownloaderDelegate> delegate;
+
 - (instancetype)initWithDelegate:(id <StreamItemDownloaderDelegate>)delegate;
 + (instancetype)downloaderWithDelegate:(id <StreamItemDownloaderDelegate>)delegate;
-
 
 - (void)downloadStreamItems;
 

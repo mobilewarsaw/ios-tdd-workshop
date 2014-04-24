@@ -5,23 +5,20 @@
 
 #import "StreamItemUploader.h"
 #import "StreamItem.h"
+#import "StreamItemTransformer.h"
 
-
+@interface StreamItemUploader ()
+@property(nonatomic, strong) StreamItemTransformer *transformer;
+@end
 
 @implementation StreamItemUploader
-
-#pragma mark - Constants
-
-NSString *const StreamItemDataKey = @"data";
-NSString *const StreamItemTitleKey = @"title";
-NSString *const StreamItemWidthKey = @"width";
-NSString *const StreamItemHeightKey = @"height";
 
 #pragma mark - Object life cycle
 
 - (instancetype)initWithDelegate:(id <StreamItemUploaderDelegate>)delegate {
     self = [super init];
     if (self) {
+        self.transformer = [StreamItemTransformer new];
         self.delegate = delegate;
     }
     return self;
@@ -34,14 +31,8 @@ NSString *const StreamItemHeightKey = @"height";
 #pragma mark - Public methods
 
 - (void)uploadStreamItem:(StreamItem *)streamItem {
-    PFObject *parseObject = [PFObject objectWithClassName:NSStringFromClass([streamItem class])];
-
-    //TODO improve this
-    parseObject[StreamItemDataKey] = streamItem.data;
-    parseObject[StreamItemTitleKey] = streamItem.title;
-    parseObject[StreamItemWidthKey] = @(streamItem.size.width);
-    parseObject[StreamItemHeightKey] = @(streamItem.size.height);
     StreamItemUploader * __weak weakSelf = self;
+    PFObject *parseObject = [self.transformer parseObjectFromStreamItem:streamItem];
     [parseObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [weakSelf.delegate streamItemUploader:weakSelf didUploadItem:streamItem];

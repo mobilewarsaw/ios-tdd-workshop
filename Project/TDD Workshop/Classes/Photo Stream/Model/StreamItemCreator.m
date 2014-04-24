@@ -94,7 +94,6 @@
     StreamItem *streamItem = [StreamItem new];
     streamItem.title = @"DEBUG";
     streamItem.data = UIImageJPEGRepresentation(resizedImage, self.imageQuality);
-//    NSLog(@"image size:[%@]",[NSByteCountFormatter stringFromByteCount:streamItem.data.length countStyle:NSByteCountFormatterCountStyleFile]);
     streamItem.size = resizedImage.size;
     [self.delegate streamItemCreator:self didCreateItem:streamItem];
     [picker dismissViewControllerAnimated:YES completion:NULL];

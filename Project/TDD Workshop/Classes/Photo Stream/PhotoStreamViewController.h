@@ -12,8 +12,11 @@
 @class StreamItemCreator;
 @class StreamItemDownloader;
 
-@interface PhotoStreamViewController : UICollectionViewController <StreamItemDownloaderDelegate, StreamItemCreatorDelegate, StreamItemUploaderDelegate>
+@interface PhotoStreamViewController : UICollectionViewController
+    <StreamItemDownloaderDelegate, StreamItemCreatorDelegate, StreamItemUploaderDelegate>
+
 @property(nonatomic, strong) StreamItemCreator *streamItemCreator;
 @property(nonatomic, strong) StreamItemUploader *streamItemUploader;
 @property(nonatomic, strong) StreamItemDownloader *streamItemDownloader;
+
 @end
