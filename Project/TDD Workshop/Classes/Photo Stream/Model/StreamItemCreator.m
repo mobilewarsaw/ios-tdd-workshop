@@ -9,6 +9,7 @@
 
 @interface StreamItemCreator ()
 @property(nonatomic, strong) ImageResizer *imageResizer;
+@property(nonatomic, strong) StreamItem *createdItem;
 @property(nonatomic, assign) CGFloat maxImageDimension;
 @property(nonatomic, assign) CGFloat imageQuality;
 @end
@@ -35,6 +36,7 @@
 #pragma mark - Public methods
 
 - (void)createStreamItem {
+    self.createdItem = nil;
     [self presentImagePickerOptionsActionSheet];
 }
 
@@ -91,16 +93,38 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *pickedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     UIImage *resizedImage = [self.imageResizer resizeImage:pickedImage toBoundBothDimensionsTo:self.maxImageDimension];
-    StreamItem *streamItem = [StreamItem new];
-    streamItem.title = @"DEBUG";
-    streamItem.data = UIImageJPEGRepresentation(resizedImage, self.imageQuality);
-    streamItem.size = resizedImage.size;
-    [self.delegate streamItemCreator:self didCreateItem:streamItem];
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+    self.createdItem = [StreamItem new];
+    self.createdItem.data = UIImageJPEGRepresentation(resizedImage, self.imageQuality);
+    self.createdItem.size = resizedImage.size;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self showAlertViewWithImageTitleTextField];
+    }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - Image title alert
+
+- (void)showAlertViewWithImageTitleTextField {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"What's the image title?"
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [[alertView textFieldAtIndex:0] setPlaceholder:@"Image title"];
+    alertView.delegate = self;
+    [alertView show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    self.createdItem.title = [[alertView textFieldAtIndex:0] text];
+    [self.delegate streamItemCreator:self didCreateItem:self.createdItem];
+    self.createdItem = nil;
 }
 
 @end

@@ -9,7 +9,8 @@
 @protocol StreamItemCreatorDelegate;
 @class ImageResizer;
 
-@interface StreamItemCreator : NSObject <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface StreamItemCreator : NSObject
+    <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 
 @property(nonatomic, weak) id <StreamItemCreatorDelegate> delegate;
 

@@ -20,8 +20,7 @@
 @end
 
 @protocol StreamItemUploaderDelegate <NSObject>
-@required
-- (void)streamItemUploader:(StreamItemUploader *)streamItemUploader didUploadItem:(StreamItem *)streamItem;
 @optional
+- (void)streamItemUploader:(StreamItemUploader *)streamItemUploader didUploadItem:(StreamItem *)streamItem;
 - (void)streamItemUploader:(StreamItemUploader *)streamItemUploader didFailToUploadWithError:(NSError *)error;
 @end

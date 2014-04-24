@@ -35,11 +35,24 @@
     PFObject *parseObject = [self.transformer parseObjectFromStreamItem:streamItem];
     [parseObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [weakSelf.delegate streamItemUploader:weakSelf didUploadItem:streamItem];
+            [weakSelf informDelegateAboutSuccessfulUploadOfItem:streamItem];
         } else {
-            [weakSelf.delegate streamItemUploader:weakSelf didFailToUploadWithError:error];
+            [weakSelf informDelegateAboutUploadFailureWithError:error];
         }
     }];
+}
+
+- (void)informDelegateAboutSuccessfulUploadOfItem:(StreamItem *)streamItem {
+    if ([self.delegate respondsToSelector:@selector(streamItemUploader:didUploadItem:)]) {
+        [self.delegate streamItemUploader:self didUploadItem:streamItem];
+    }
+}
+
+- (void)informDelegateAboutUploadFailureWithError:(NSError *)error {
+    if ([self.delegate respondsToSelector:@selector(streamItemUploader:didFailToUploadWithError:)]) {
+        [self.delegate streamItemUploader:self didFailToUploadWithError:error];
+    }
+
 }
 
 @end

@@ -11,7 +11,7 @@
 
 @interface PhotoStreamViewController ()
 @property(nonatomic, strong) UIRefreshControl *refreshControl;
-@property(nonatomic, strong) NSArray *streamItems;
+@property(nonatomic, strong) NSMutableArray *streamItems;
 @end
 
 @implementation PhotoStreamViewController
@@ -100,7 +100,7 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 #pragma mark - StreamItemDownloaderDelegate
 
 - (void)streamItemDownloader:(StreamItemDownloader *)streamItemDownloader didDownloadItems:(NSArray *)items {
-    self.streamItems = items;
+    self.streamItems = [NSMutableArray arrayWithArray:items];
     [self.collectionView reloadData];
     [self.refreshControl endRefreshing];
 }
@@ -108,6 +108,8 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 #pragma mark - StreamItemCreatorDelegate
 
 - (void)streamItemCreator:(StreamItemCreator *)streamItemCreator didCreateItem:(StreamItem *)streamItem {
+    [self.streamItems addObject:streamItem];
+    [self.collectionView reloadData];
     [self.streamItemUploader uploadStreamItem:streamItem];
 }
 
@@ -117,12 +119,6 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 
 - (UITabBar *)tabBarToPresentOnImagePickOptionsForStreamItemCreator:(StreamItemCreator *)streamItemCreator {
     return self.tabBarController.tabBar;
-}
-
-#pragma mark - StreamItemUploaderDelegate
-
-- (void)streamItemUploader:(StreamItemUploader *)streamItemUploader didUploadItem:(StreamItem *)streamItem {
-    [self.streamItemDownloader downloadStreamItems];
 }
 
 @end
