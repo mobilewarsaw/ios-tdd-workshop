@@ -62,10 +62,10 @@
 
 - (void)setupActionSheetButtons:(UIActionSheet *)actionSheet {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        [actionSheet addButtonWithTitle:@"Pick photo from library"];
+        [actionSheet addButtonWithTitle:@"Pick from library"];
     }
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        [actionSheet addButtonWithTitle:@"Take photo"];
+        [actionSheet addButtonWithTitle:@"Take a photo"];
     }
     [actionSheet addButtonWithTitle:@"Cancel"];
     [actionSheet setCancelButtonIndex:actionSheet.numberOfButtons - 1];

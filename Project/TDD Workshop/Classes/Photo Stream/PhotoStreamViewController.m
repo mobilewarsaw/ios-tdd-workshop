@@ -7,6 +7,7 @@
 #import "StreamItem.h"
 #import "PhotoStreamLayout.h"
 #import "PhotoStreamCell.h"
+#import "StreamItemViewController.h"
 
 @interface PhotoStreamViewController ()
 @property(nonatomic, strong) UIRefreshControl *refreshControl;
@@ -25,11 +26,9 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
     PhotoStreamLayout *layout = [[PhotoStreamLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
-
         self.streamItemUploader = [StreamItemUploader uploaderWithDelegate:self];
         self.streamItemCreator = [StreamItemCreator creatorWithDelegate:self];
         self.streamItemDownloader = [StreamItemDownloader downloaderWithDelegate:self];
-
         self.title = NSLocalizedString(@"Photo Stream", @"Photo Stream");
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title
                                                         image:[UIImage imageNamed:@"PhotoStream"]
@@ -85,9 +84,17 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PhotoStreamCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoStreamViewControllerCellId forIndexPath:indexPath];
     StreamItem *streamItem = self.streamItems[(NSUInteger) indexPath.item];
-    UIImage *image = [[UIImage alloc] initWithData:streamItem.data];
-    cell.imageView.image = image;
+    cell.imageView.image = [streamItem image];
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    StreamItem *streamItem = self.streamItems[(NSUInteger) indexPath.item];
+    StreamItemViewController *streamItemViewController = [StreamItemViewController controllerWithStreamItem:streamItem];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:streamItemViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 #pragma mark - StreamItemDownloaderDelegate
