@@ -8,10 +8,11 @@
 
 @implementation Speaker
 
-- (instancetype)initWithName:(NSString *)name {
+- (instancetype)initWithName:(NSString *)name photo:(UIImage *)photo {
     self = [super init];
     if (self) {
         _name = name;
+        _photo = photo;
     }
 
     return self;

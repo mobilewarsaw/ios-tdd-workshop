@@ -40,7 +40,7 @@
     NSMutableArray *speakers = [NSMutableArray array];
 
     for (NSDictionary *JSONSpeaker in JSONSpeakers) {
-        Speaker *speaker = [[Speaker alloc] initWithName:JSONSpeaker[@"name"]];
+        Speaker *speaker = [[Speaker alloc] initWithName:JSONSpeaker[@"name"] photo:nil];
         [speakers addObject:speaker];
     }
 
@@ -63,7 +63,7 @@
     [super viewDidLayoutSubviews];
 
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *) self.collectionViewLayout;
-    flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.bounds), 50);
+    flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.bounds), 80);
 }
 
 #pragma mark - Overriden Setters

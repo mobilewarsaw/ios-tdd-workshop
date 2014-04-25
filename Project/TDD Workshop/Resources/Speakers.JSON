@@ -1,15 +1,19 @@
 [
     {
-        "name" : "Paweł Dudek"
+        "name": "Paweł Dudek",
+        "image": "dudek.png"
     },
     {
-        "name" : "Łukasz Warchoł"
+        "name": "Łukasz Warchoł",
+        "image": "warchol.png"
     }   ,
     {
-        "name" : "Aleksander Zubala"
+        "name": "Aleksander Zubala",
+        "image": "zubala.png"
     },
     {
-        "name" : "Maciej Oczko"
+        "name": "Maciej Oczko",
+        "image": "oczko.png"
     }
 
 ]

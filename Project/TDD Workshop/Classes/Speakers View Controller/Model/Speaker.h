@@ -10,6 +10,6 @@
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, readonly) UIImage *photo;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name photo:(UIImage *)photo;
 
 @end

@@ -31,7 +31,7 @@
     for (NSDictionary *JSONAgendaItem in JSONAgendaItems) {
         NSMutableArray *speakers = [NSMutableArray array];
         for (NSString *JSONSpeakerName in JSONAgendaItem[@"speakers"]) {
-            Speaker *speaker = [[Speaker alloc] initWithName:JSONSpeakerName];
+            Speaker *speaker = [[Speaker alloc] initWithName:JSONSpeakerName photo:nil ];
             [speakers addObject:speaker];
         }
 
