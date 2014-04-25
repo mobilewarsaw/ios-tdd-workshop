@@ -7,6 +7,7 @@
 #import "SpeakersViewController.h"
 #import "PhotoStreamViewController.h"
 #import "AgendaViewController.h"
+#import "PollViewController.h"
 
 
 @implementation RootTabBarController
@@ -19,11 +20,14 @@
 
     PhotoStreamViewController *photoStreamViewController = [PhotoStreamViewController new];
     UINavigationController *photoStreamNavigationController = [[UINavigationController alloc] initWithRootViewController:photoStreamViewController];
-    
+
     AgendaViewController *agendaViewController = [AgendaViewController new];
     UINavigationController *agendaNavigationController = [[UINavigationController alloc] initWithRootViewController:agendaViewController];
 
-    self.viewControllers = @[speakersNavigationController, photoStreamNavigationController, agendaNavigationController];
+    PollViewController *pollController = [PollViewController new];
+    UINavigationController *pollNavigationController = [[UINavigationController alloc] initWithRootViewController:pollController];
+
+    self.viewControllers = @[speakersNavigationController, photoStreamNavigationController, agendaNavigationController, pollNavigationController];
 }
 
 @end

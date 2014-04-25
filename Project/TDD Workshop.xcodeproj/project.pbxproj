@@ -50,7 +50,17 @@
 		51043F3A4C4ADADDC1CD6C09 /* PhotoStreamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 510437B92629399AA5A617E6 /* PhotoStreamCell.m */; };
 		51043F48261F9EF558458820 /* StreamItemTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043C7AD35D283FC3A8997B /* StreamItemTransformer.m */; };
 		51043FAA43E3EC9A3D85074C /* Configurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5104360D9F181D89E20CA03C /* Configurator.m */; };
+		8108618342CE3920552B0D80 /* Poll.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086E6021AE14C1F87E9B1B /* Poll.m */; };
+		81086445592BEC5457D4163D /* NSLayoutConstraint+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8108658947B4BF9E7612FDE6 /* NSLayoutConstraint+Utilities.m */; };
+		810866338622BEC7C4C0EB4A /* PollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086B0D9ED2535E7BDB6F6A /* PollTextView.m */; };
+		810866B138C3E04FB14466FC /* PollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 810867D57EB6024B3BB3AFC1 /* PollViewController.m */; };
 		810866F1FE320FA1B2B2F023 /* Agenda.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 810863A399DF2C73F86CBB3C /* Agenda.JSON */; };
+		81086747DA487D249A16BAFE /* PollSliderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 810865CD1845B24926B9304F /* PollSliderItem.m */; };
+		810868C67B5D309FA50BE791 /* AgendaProvider+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086306084AE59953A39AB2 /* AgendaProvider+SharedInstance.m */; };
+		810869F06A8D5E31BAE527C8 /* PollManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086B00684003C35FE988C4 /* PollManager.m */; };
+		81086CDC548B56E717FF22C7 /* PollSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8108682AA5667A81D05AEA16 /* PollSlider.m */; };
+		81086E163A9DFF20967D20E4 /* PollTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8108669326B9976BB96F7862 /* PollTextField.m */; };
+		81086E78FC205DB4277A4652 /* PollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 810864696868DEB6E3D638D9 /* PollView.m */; };
 		944AF0D51907124D00C36DA1 /* PhotoStreamViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 510430351EDD2ECC10DB5F0C /* PhotoStreamViewControllerSpec.m */; };
 		B27A901654FE494E865AF180 /* AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9BB373E87A85573C3463 /* AgendaViewController.m */; };
 		B27A9056ADDB5BAB5972C05E /* SpeakersCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9C59E6E6435FEAA650A4 /* SpeakersCollectionViewLayout.m */; };
@@ -143,7 +153,27 @@
 		51043C7AD35D283FC3A8997B /* StreamItemTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemTransformer.m; sourceTree = "<group>"; };
 		51043DE94D02BF3DAD3C447E /* StreamItemPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemPreviewViewController.m; sourceTree = "<group>"; };
 		51043F16E2B9F624D87DD1E0 /* StreamItemUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItemUploader.h; sourceTree = "<group>"; };
+		8108605EE578750878FC1317 /* PollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollTextView.h; sourceTree = "<group>"; };
+		8108618E9EA466C9108D9CDB /* AgendaProvider+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AgendaProvider+SharedInstance.h"; sourceTree = "<group>"; };
+		81086306084AE59953A39AB2 /* AgendaProvider+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AgendaProvider+SharedInstance.m"; sourceTree = "<group>"; };
 		810863A399DF2C73F86CBB3C /* Agenda.JSON */ = {isa = PBXFileReference; lastKnownFileType = file.JSON; path = Agenda.JSON; sourceTree = "<group>"; };
+		810864359846629EC344E7DC /* PollTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollTextField.h; sourceTree = "<group>"; };
+		810864696868DEB6E3D638D9 /* PollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollView.m; sourceTree = "<group>"; };
+		8108658947B4BF9E7612FDE6 /* NSLayoutConstraint+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Utilities.m"; sourceTree = "<group>"; };
+		810865CD1845B24926B9304F /* PollSliderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollSliderItem.m; sourceTree = "<group>"; };
+		81086643ADD18D8483B46345 /* PollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollViewController.h; sourceTree = "<group>"; };
+		8108669326B9976BB96F7862 /* PollTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollTextField.m; sourceTree = "<group>"; };
+		810866FCAC38E491806480F0 /* PollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollView.h; sourceTree = "<group>"; };
+		810867CEB226013EA92C4573 /* PollManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollManager.h; sourceTree = "<group>"; };
+		810867D57EB6024B3BB3AFC1 /* PollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollViewController.m; sourceTree = "<group>"; };
+		8108682AA5667A81D05AEA16 /* PollSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollSlider.m; sourceTree = "<group>"; };
+		8108689579060B5FF554F6FE /* Poll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poll.h; sourceTree = "<group>"; };
+		8108690BD9973061F45B5948 /* PollSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollSlider.h; sourceTree = "<group>"; };
+		81086B00684003C35FE988C4 /* PollManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollManager.m; sourceTree = "<group>"; };
+		81086B0D9ED2535E7BDB6F6A /* PollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollTextView.m; sourceTree = "<group>"; };
+		81086C9C3664DABFE46AD77B /* PollSliderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollSliderItem.h; sourceTree = "<group>"; };
+		81086E6021AE14C1F87E9B1B /* Poll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poll.m; sourceTree = "<group>"; };
+		81086FFD6A2E06064ABAE888 /* NSLayoutConstraint+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Utilities.h"; sourceTree = "<group>"; };
 		B1988BE4051D4DB1BD8289FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B27A906A6CF5289BAF372867 /* SpeakerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerCollectionViewCell.h; sourceTree = "<group>"; };
 		B27A90E688525135350583C0 /* AgendaCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaCollectionViewDataSource.m; sourceTree = "<group>"; };
@@ -376,6 +406,62 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		810866EA08EFFD118D9F0215 /* Poll */ = {
+			isa = PBXGroup;
+			children = (
+				810869F55DD4C0792EA5B12D /* UI */,
+				81086CD4AEBE58551F6543E9 /* Model */,
+			);
+			path = Poll;
+			sourceTree = "<group>";
+		};
+		8108686FD8B0743CDB46E184 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				8108690BD9973061F45B5948 /* PollSlider.h */,
+				8108682AA5667A81D05AEA16 /* PollSlider.m */,
+				8108605EE578750878FC1317 /* PollTextView.h */,
+				81086B0D9ED2535E7BDB6F6A /* PollTextView.m */,
+				810864359846629EC344E7DC /* PollTextField.h */,
+				8108669326B9976BB96F7862 /* PollTextField.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		810869F55DD4C0792EA5B12D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8108686FD8B0743CDB46E184 /* Controls */,
+				810866FCAC38E491806480F0 /* PollView.h */,
+				810864696868DEB6E3D638D9 /* PollView.m */,
+				81086643ADD18D8483B46345 /* PollViewController.h */,
+				810867D57EB6024B3BB3AFC1 /* PollViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		81086B937B61D6A399390A39 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8108658947B4BF9E7612FDE6 /* NSLayoutConstraint+Utilities.m */,
+				81086FFD6A2E06064ABAE888 /* NSLayoutConstraint+Utilities.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		81086CD4AEBE58551F6543E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8108689579060B5FF554F6FE /* Poll.h */,
+				81086E6021AE14C1F87E9B1B /* Poll.m */,
+				810867CEB226013EA92C4573 /* PollManager.h */,
+				81086B00684003C35FE988C4 /* PollManager.m */,
+				81086C9C3664DABFE46AD77B /* PollSliderItem.h */,
+				810865CD1845B24926B9304F /* PollSliderItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B27A905CCCD72204B3022D5F /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +544,8 @@
 				51043080C62EC0FA452F8F09 /* Photo Stream */,
 				5104304FE94993E43B18A319 /* App Configuration */,
 				B27A905CCCD72204B3022D5F /* Agenda */,
+				810866EA08EFFD118D9F0215 /* Poll */,
+				81086B937B61D6A399390A39 /* Utilities */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -493,6 +581,8 @@
 				B27A98C9553E38A463E9F4D9 /* AgendaProvider.m */,
 				B27A9AE1C12AECA3342112A0 /* AgendaProvider.h */,
 				1EDB8361EBA8EEABB97963E4 /* AgendaProviderSpec.m */,
+				81086306084AE59953A39AB2 /* AgendaProvider+SharedInstance.m */,
+				8108618E9EA466C9108D9CDB /* AgendaProvider+SharedInstance.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -724,6 +814,16 @@
 				B27A9CC866FDAA137CF8BDB1 /* AgendaCollectionViewCell.m in Sources */,
 				B27A9D81BB54BDA1E692BA0F /* AgendaCollectionViewDataSource.m in Sources */,
 				510431358E25B1DCFAED9960 /* StreamItemPreviewViewController.m in Sources */,
+				81086CDC548B56E717FF22C7 /* PollSlider.m in Sources */,
+				810866338622BEC7C4C0EB4A /* PollTextView.m in Sources */,
+				81086E163A9DFF20967D20E4 /* PollTextField.m in Sources */,
+				81086E78FC205DB4277A4652 /* PollView.m in Sources */,
+				810866B138C3E04FB14466FC /* PollViewController.m in Sources */,
+				8108618342CE3920552B0D80 /* Poll.m in Sources */,
+				810869F06A8D5E31BAE527C8 /* PollManager.m in Sources */,
+				81086747DA487D249A16BAFE /* PollSliderItem.m in Sources */,
+				810868C67B5D309FA50BE791 /* AgendaProvider+SharedInstance.m in Sources */,
+				81086445592BEC5457D4163D /* NSLayoutConstraint+Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
