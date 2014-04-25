@@ -10,8 +10,10 @@
 		0835AE51E1D442A2BE7765FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E59A1BB742214388ABE91004 /* libPods.a */; };
 		1EDB80AF6BC4C379C818A5CF /* AgendaProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8361EBA8EEABB97963E4 /* AgendaProviderSpec.m */; };
 		1EDB85C9DAF2B5A908D93A10 /* AgendaCollectionViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB861D7FD3F44E422AEECE /* AgendaCollectionViewDataSourceSpec.m */; };
+		1EDB885EAA0CA775A8707F6E /* FakeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8A2AB8AECD1BF0ECAECA /* FakeCollectionView.m */; };
 		1EDB8BEABDCA85858CE325DC /* FakeAgendaCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB836B8C0BBED816EC918A /* FakeAgendaCollectionViewDataSource.m */; };
 		1EDB8D90D1C24754015D8FF2 /* FakeAgendaProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8C06591F6E2CFA397CAF /* FakeAgendaProvider.m */; };
+		1EDB8E63A5547729FE9E90FB /* AgendaItemFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB86E908039895488C9398 /* AgendaItemFixture.m */; };
 		43C5D4B51904429F002D1766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C5D4B41904429F002D1766 /* Foundation.framework */; };
 		43C5D4B71904429F002D1766 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C5D4B61904429F002D1766 /* CoreGraphics.framework */; };
 		43C5D4B91904429F002D1766 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C5D4B81904429F002D1766 /* UIKit.framework */; };
@@ -92,7 +94,11 @@
 /* Begin PBXFileReference section */
 		1EDB8361EBA8EEABB97963E4 /* AgendaProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaProviderSpec.m; sourceTree = "<group>"; };
 		1EDB836B8C0BBED816EC918A /* FakeAgendaCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeAgendaCollectionViewDataSource.m; sourceTree = "<group>"; };
+		1EDB84F5A15840E705C1A65A /* FakeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeCollectionView.h; sourceTree = "<group>"; };
 		1EDB861D7FD3F44E422AEECE /* AgendaCollectionViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaCollectionViewDataSourceSpec.m; sourceTree = "<group>"; };
+		1EDB86E908039895488C9398 /* AgendaItemFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaItemFixture.m; sourceTree = "<group>"; };
+		1EDB8A2AB8AECD1BF0ECAECA /* FakeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeCollectionView.m; sourceTree = "<group>"; };
+		1EDB8BDFB344DF3A32724382 /* AgendaItemFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaItemFixture.h; sourceTree = "<group>"; };
 		1EDB8C06591F6E2CFA397CAF /* FakeAgendaProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeAgendaProvider.m; sourceTree = "<group>"; };
 		1EDB8DC8BECEE523F246FC82 /* FakeAgendaCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeAgendaCollectionViewDataSource.h; sourceTree = "<group>"; };
 		1EDB8FEB587E71943373CE37 /* FakeAgendaProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeAgendaProvider.h; sourceTree = "<group>"; };
@@ -209,6 +215,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EDB821A28DD8CAF7BA0E7B6 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				1EDB86E908039895488C9398 /* AgendaItemFixture.m */,
+				1EDB8BDFB344DF3A32724382 /* AgendaItemFixture.h */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		1EDB889573FF6D6F835D06D2 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +231,8 @@
 				1EDB8C06591F6E2CFA397CAF /* FakeAgendaProvider.m */,
 				1EDB8DC8BECEE523F246FC82 /* FakeAgendaCollectionViewDataSource.h */,
 				1EDB836B8C0BBED816EC918A /* FakeAgendaCollectionViewDataSource.m */,
+				1EDB8A2AB8AECD1BF0ECAECA /* FakeCollectionView.m */,
+				1EDB84F5A15840E705C1A65A /* FakeCollectionView.h */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -269,6 +286,7 @@
 			children = (
 				43C5D4DD1904429F002D1766 /* Supporting Files */,
 				1EDB889573FF6D6F835D06D2 /* Fakes */,
+				1EDB821A28DD8CAF7BA0E7B6 /* Fixtures */,
 			);
 			path = "TDD WorkshopTests";
 			sourceTree = "<group>";
@@ -550,7 +568,7 @@
 				ORGANIZATIONNAME = "Mobile Warsaw";
 				TargetAttributes = {
 					43C5D4D41904429F002D1766 = {
-						TestTargetID = 43C5D4B01904429F002D1766 /* TDD Workshop */;
+						TestTargetID = 43C5D4B01904429F002D1766;
 					};
 				};
 			};
@@ -727,6 +745,8 @@
 				1EDB85C9DAF2B5A908D93A10 /* AgendaCollectionViewDataSourceSpec.m in Sources */,
 				1EDB80AF6BC4C379C818A5CF /* AgendaProviderSpec.m in Sources */,
 				B27A93BC50952551175D197B /* SpeakerDetailsViewControllerSpec.m in Sources */,
+				1EDB885EAA0CA775A8707F6E /* FakeCollectionView.m in Sources */,
+				1EDB8E63A5547729FE9E90FB /* AgendaItemFixture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
