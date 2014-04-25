@@ -128,12 +128,12 @@ typedef struct{
             return YES;
         }
         
-        if([self touchInCircleWithPoint:touchPoint circleCenter:drawInf.startMarkerCenter]){
-            trackingSector = sector;
-            trackingSectorDrawInf = drawInf;
-            trackingSectorStartMarker = YES;
-            return YES;
-        }
+//        if([self touchInCircleWithPoint:touchPoint circleCenter:drawInf.startMarkerCenter]){
+//            trackingSector = sector;
+//            trackingSectorDrawInf = drawInf;
+//            trackingSectorStartMarker = YES;
+//            return YES;
+//        }
         
     }
     return NO;
