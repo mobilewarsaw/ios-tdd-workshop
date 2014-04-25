@@ -51,7 +51,7 @@ SPEC_BEGIN(PhotoStreamViewController)
                 photoStreamViewController.streamItemCreator = itemCreatorMock;
 
                 UIBarButtonItem *barButtonItem = photoStreamViewController.navigationItem.rightBarButtonItem;
-                [photoStreamViewController performSelector:barButtonItem.action];
+                [photoStreamViewController performSelector:barButtonItem.action withObject:barButtonItem];
             });
             it(@"should create stream item", ^{
                 [verify(itemCreatorMock) createStreamItem];
