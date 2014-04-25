@@ -17,9 +17,7 @@ static NSString *kPollCompleted = @"kPollCompleted";
 @property(nonatomic, readwrite, getter = isPollCompleted) BOOL pollCompleted;
 @end
 
-@implementation PollManager {
-
-}
+@implementation PollManager
 
 + (instancetype)sharedInstance {
     static PollManager *sharedManager = nil;

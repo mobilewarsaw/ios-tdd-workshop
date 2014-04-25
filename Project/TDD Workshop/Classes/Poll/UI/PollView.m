@@ -2,12 +2,10 @@
 #import "PollTextField.h"
 #import "PollSlider.h"
 #import "AgendaItem.h"
-#import "AgendaProvider.h"
 #import "SAMultisectorControl.h"
 #import "PollTextView.h"
 #import "NSLayoutConstraint+Utilities.h"
 #import "View+MASAdditions.h"
-#import "AgendaProvider+SharedInstance.h"
 #import "UIColor+TDDWorkshop.h"
 
 
