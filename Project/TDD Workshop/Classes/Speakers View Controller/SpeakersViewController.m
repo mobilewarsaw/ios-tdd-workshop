@@ -10,19 +10,18 @@
 #import "SpeakersCollectionViewDataSource.h"
 #import "Speaker.h"
 #import "SpeakerCollectionViewCell.h"
-#import "SpeakersCollectionViewLayout.h"
 #import "SpeakerDetailsViewController.h"
 
 @implementation SpeakersViewController
 
 - (id)init {
-    UICollectionViewFlowLayout *layout = [[SpeakersCollectionViewLayout alloc] init];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         _speakers = [self defaultSpeakers];
 
         self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] initWithSpeakers:self.speakers];
-        self.title = @"Soeakers";
+        self.title = @"Speakers";
 
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title
                                                         image:[UIImage imageNamed:@"Contact"]

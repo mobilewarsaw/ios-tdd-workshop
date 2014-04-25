@@ -16,6 +16,10 @@ describe(@"SpeakersViewController", ^{
         viewController = nil;
     });
 
+    it(@"should have a title", ^{
+        expect(viewController.title).to.equal(@"Speakers");
+    });
+
     describe(@"tab bar item", ^{
 
         __block UITabBarItem *item;
@@ -35,10 +39,6 @@ describe(@"SpeakersViewController", ^{
 
         beforeEach(^{
             dataSource = [viewController speakersDataSource];
-        });
-
-        it(@"should be a speakers data source", ^{
-            expect(dataSource).to.beKindOf([SpeakersCollectionViewDataSource class]);
         });
 
         it(@"should be view controllers collection view delegate", ^{
