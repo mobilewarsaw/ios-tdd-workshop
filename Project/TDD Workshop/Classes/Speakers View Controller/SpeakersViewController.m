@@ -10,11 +10,13 @@
 #import "SpeakersCollectionViewDataSource.h"
 #import "Speaker.h"
 #import "SpeakerCollectionViewCell.h"
+#import "SpeakersCollectionViewLayout.h"
+#import "SpeakerDetailsViewController.h"
 
 @implementation SpeakersViewController
 
 - (id)init {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *layout = [[SpeakersCollectionViewLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] initWithSpeakers:[self defaultSpeakers]];
@@ -61,7 +63,7 @@
     [super viewDidLayoutSubviews];
 
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *) self.collectionViewLayout;
-    flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.bounds), 44);
+    flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.bounds), 50);
 }
 
 #pragma mark - Overriden Setters
@@ -69,6 +71,15 @@
 - (void)setSpeakersDataSource:(SpeakersCollectionViewDataSource *)speakersDataSource {
     _speakersDataSource = speakersDataSource;
     self.collectionView.dataSource = self.speakersDataSource;
+}
+
+#pragma mark - UICollection View Delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    Speaker *speaker = [self defaultSpeakers][indexPath.row];
+    SpeakerDetailsViewController *detailsViewController = [[SpeakerDetailsViewController alloc] initWithSpeaker:speaker];
+    detailsViewController.useLayoutToLayoutNavigationTransitions = YES;
+    [self.navigationController pushViewController:detailsViewController animated:YES];
 }
 
 @end

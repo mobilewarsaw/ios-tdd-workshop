@@ -90,7 +90,7 @@ describe(@"SpeakersViewController", ^{
                 });
 
                 it(@"should set item size on the collection view layout", ^{
-                    expect(layout.itemSize).to.equal(CGSizeMake(42, 44));
+                    expect(layout.itemSize).to.equal(CGSizeMake(42, 50));
                 });
             });
         });

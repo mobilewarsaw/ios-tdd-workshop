@@ -38,8 +38,8 @@
 
     NSDictionary *views = @{@"name" : self.nameLabel, @"image" : self.imageView};
 
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(5)-[image]-(5)-[name]-|"
-                                                                             options:NSLayoutFormatAlignAllCenterY
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(9)-[image]-(9)-[name]-|"
+                                                                             options:0
                                                                              metrics:nil
                                                                                views:views]];
 
