@@ -10,4 +10,13 @@
 
 @implementation AgendaViewController
 
+- (id)init {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    self = [super initWithCollectionViewLayout:layout];
+    if (self) {
+        self.tabBarItem.image = [UIImage imageNamed:@"agenda"];
+    }
+    return self;
+}
+
 @end
