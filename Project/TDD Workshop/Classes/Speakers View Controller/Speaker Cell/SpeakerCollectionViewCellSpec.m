@@ -15,8 +15,8 @@ describe(@"SpeakerCollectionViewCell", ^{
         collectionViewCell = nil;
     });
 
-    describe(@"", ^{
-
+    it(@"should have an image view", ^{
+        expect(collectionViewCell.imageView).to.beKindOf([UIImageView class]);
     });
 });
 
