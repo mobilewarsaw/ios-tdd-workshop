@@ -1,28 +1,37 @@
 PODS:
   - Expecta (0.3.0)
   - Facebook-iOS-SDK (3.13.1)
+  - IQKeyboardManager (3.0.4)
+  - Masonry (0.4.0)
   - OCHamcrest (3.0.1)
   - OCMock (2.2.4)
   - OCMockito (1.2.0):
     - OCHamcrest (~> 3.0)
   - Parse-iOS-SDK (1.2.19):
     - Facebook-iOS-SDK (~> 3.7)
+  - SAMultisectorControl (1.0.1)
   - Specta (0.2.1)
 
 DEPENDENCIES:
   - Expecta
+  - IQKeyboardManager (~> 3.0.4)
+  - Masonry
   - OCMock
   - OCMockito
   - Parse-iOS-SDK (~> 1.2)
+  - SAMultisectorControl
   - Specta
 
 SPEC CHECKSUMS:
   Expecta: 322f1dc42610106a5ba9871b4924cf1635d80833
-  Facebook-iOS-SDK: 0d121e16437981fabff9379e07bf646bd5ab245c
+  Facebook-iOS-SDK: 47ae9e54684c84f93d75d4e6ab47cd031abdf406
+  IQKeyboardManager: 7f7d9ac326ff0908499d5304645338baf846f4d2
+  Masonry: d673617c9cbc24aaea90fba20b10e47fd9970a39
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   OCMock: 5008fae4b4789b8fc3e48cd7660f2eb5ef8ce89e
   OCMockito: 050fca9528760faa8b5fafc82faad9d54f0864c0
   Parse-iOS-SDK: 48e366fb9a8956c4e50d93cfd16243176938fae1
+  SAMultisectorControl: d9d487f831dc10d983e434c2d84232e707089ec6
   Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
 
 COCOAPODS: 0.32.1
