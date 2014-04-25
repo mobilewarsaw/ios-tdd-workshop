@@ -10,7 +10,8 @@
 
 @class SpeakersCollectionViewDataSource;
 
-@interface SpeakersViewController : UICollectionViewController
+@interface SpeakersViewController : UICollectionViewController <UINavigationControllerDelegate>
 @property(nonatomic, strong) SpeakersCollectionViewDataSource *speakersDataSource;
 
+@property(nonatomic, readonly) NSArray *speakers;
 @end

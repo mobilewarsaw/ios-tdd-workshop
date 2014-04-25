@@ -58,6 +58,7 @@
 		B27A92B6316A1E604BF9B98F /* SeparatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A99558246AC21EABCD7 /* SeparatorView.m */; };
 		B27A93238C3DB4F0859DD791 /* AgendaViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92D0682AFE21E11385A9 /* AgendaViewControllerSpec.m */; };
 		B27A937730478652E2F1969E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27A9EA130AFF757F72BDC66 /* Main.storyboard */; };
+		B27A93BC50952551175D197B /* SpeakerDetailsViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A7F313CB7B4BA43122F /* SpeakerDetailsViewControllerSpec.m */; };
 		B27A951712A1D5B5E0C81065 /* SpeakerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9BFB623551B2B8B63403 /* SpeakerDetailsViewController.m */; };
 		B27A954E6E7A4E4CA2F00D8A /* SpeakersViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9720DB26070703067460 /* SpeakersViewControllerSpec.m */; };
 		B27A95EBA9C44F296EEF0485 /* SeparatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A99558246AC21EABCD7 /* SeparatorView.m */; };
@@ -161,6 +162,7 @@
 		B27A9959941ED617E76CFAF9 /* SeparatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeparatorView.h; sourceTree = "<group>"; };
 		B27A9A19F501F0EBB0F4CE4D /* UIColor+TDDWorkshop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TDDWorkshop.m"; sourceTree = "<group>"; };
 		B27A9A53CE040108B6159872 /* AgendaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaCollectionViewCell.h; sourceTree = "<group>"; };
+		B27A9A7F313CB7B4BA43122F /* SpeakerDetailsViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDetailsViewControllerSpec.m; sourceTree = "<group>"; };
 		B27A9A99558246AC21EABCD7 /* SeparatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeparatorView.m; sourceTree = "<group>"; };
 		B27A9AA93D804D88540AD695 /* UIColor+TDDWorkshop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TDDWorkshop.h"; sourceTree = "<group>"; };
 		B27A9AE1C12AECA3342112A0 /* AgendaProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaProvider.h; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 			children = (
 				B27A9BFB623551B2B8B63403 /* SpeakerDetailsViewController.m */,
 				B27A968609A6DC361DD37334 /* SpeakerDetailsViewController.h */,
+				B27A9A7F313CB7B4BA43122F /* SpeakerDetailsViewControllerSpec.m */,
 			);
 			path = "Speaker Details";
 			sourceTree = "<group>";
@@ -547,7 +550,7 @@
 				ORGANIZATIONNAME = "Mobile Warsaw";
 				TargetAttributes = {
 					43C5D4D41904429F002D1766 = {
-						TestTargetID = 43C5D4B01904429F002D1766;
+						TestTargetID = 43C5D4B01904429F002D1766 /* TDD Workshop */;
 					};
 				};
 			};
@@ -723,6 +726,7 @@
 				1EDB8BEABDCA85858CE325DC /* FakeAgendaCollectionViewDataSource.m in Sources */,
 				1EDB85C9DAF2B5A908D93A10 /* AgendaCollectionViewDataSourceSpec.m in Sources */,
 				1EDB80AF6BC4C379C818A5CF /* AgendaProviderSpec.m in Sources */,
+				B27A93BC50952551175D197B /* SpeakerDetailsViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

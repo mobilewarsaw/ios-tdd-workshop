@@ -8,10 +8,9 @@
 @class Speaker;
 
 
-@interface SpeakerDetailsViewController : UICollectionViewController
+@interface SpeakerDetailsViewController : UIViewController
 @property(nonatomic, readonly) Speaker *speaker;
 
 - (instancetype)initWithSpeaker:(Speaker *)speaker;
-
 
 @end

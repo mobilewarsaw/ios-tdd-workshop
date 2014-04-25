@@ -10,13 +10,22 @@
 @implementation SpeakerDetailsViewController
 
 - (instancetype)initWithSpeaker:(Speaker *)speaker {
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    self = [super initWithCollectionViewLayout:flowLayout];
+    self = [super init];
     if (self) {
         _speaker = speaker;
+
+        self.title = self.speaker.name;
     }
 
     return self;
+}
+
+#pragma mark - UIViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end

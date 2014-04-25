@@ -19,7 +19,9 @@
     UICollectionViewFlowLayout *layout = [[SpeakersCollectionViewLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
-        self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] initWithSpeakers:[self defaultSpeakers]];
+        _speakers = [self defaultSpeakers];
+
+        self.speakersDataSource = [[SpeakersCollectionViewDataSource alloc] initWithSpeakers:self.speakers];
         self.title = @"Soeakers";
 
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title
@@ -76,9 +78,8 @@
 #pragma mark - UICollection View Delegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    Speaker *speaker = [self defaultSpeakers][indexPath.row];
+    Speaker *speaker = [self speakers][(NSUInteger) indexPath.row];
     SpeakerDetailsViewController *detailsViewController = [[SpeakerDetailsViewController alloc] initWithSpeaker:speaker];
-    detailsViewController.useLayoutToLayoutNavigationTransitions = YES;
     [self.navigationController pushViewController:detailsViewController animated:YES];
 }
 
