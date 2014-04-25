@@ -1,6 +1,13 @@
+//
+//  TDD Workshop
+//
+//  Created by Lukasz Warchol on 22/04/14.
+//  Copyright (c) 2014 Mobile Warsaw. All rights reserved.
+//
+
+
 #import <Foundation/Foundation.h>
 
-@class AgendaItem;
 
 @interface AgendaCollectionViewCell : UICollectionViewCell
 @property(nonatomic, strong) UILabel *titleLabel;
@@ -9,5 +16,4 @@
 @property(nonatomic, strong) UIView *typeView;
 @property(nonatomic, strong) UILabel *speakersLabel;
 
-- (void)configureForAgendaItem:(AgendaItem *)item;
 @end

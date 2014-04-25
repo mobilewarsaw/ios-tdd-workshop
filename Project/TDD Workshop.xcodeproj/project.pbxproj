@@ -50,8 +50,8 @@
 		81086A50F0C929111B800947 /* AgendaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8108610087FC19F6D6DCE1B0 /* AgendaCollectionViewCell.m */; };
 		81086AE4EF71D73AEB15B7B2 /* AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 810867A0CFBF13E50E27E0FB /* AgendaViewController.m */; };
 		81086DB792F3D46FB6B0BD3C /* AgendaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086001F7ECD8482B0183A8 /* AgendaItem.m */; };
-		944AF0D51907124D00C36DA1 /* PhotoStreamViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 510430351EDD2ECC10DB5F0C /* PhotoStreamViewControllerSpec.m */; };
 		863F85FC1909ACFB00DD3FE4 /* AgendaViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 863F85FB1909ACFB00DD3FE4 /* AgendaViewControllerSpec.m */; };
+		944AF0D51907124D00C36DA1 /* PhotoStreamViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 510430351EDD2ECC10DB5F0C /* PhotoStreamViewControllerSpec.m */; };
 		B27A90C1276516EF0976C721 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A98A82123128D7921D187 /* AppDelegate.m */; };
 		B27A9102589328414886245B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27A9F1C86B830D77578705F /* Images.xcassets */; };
 		B27A937730478652E2F1969E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27A9EA130AFF757F72BDC66 /* Main.storyboard */; };

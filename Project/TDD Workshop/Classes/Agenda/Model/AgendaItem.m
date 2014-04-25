@@ -1,9 +1,15 @@
+//
+//  TDD Workshop
+//
+//  Created by Lukasz Warchol on 22/04/14.
+//  Copyright (c) 2014 Mobile Warsaw. All rights reserved.
+//
+
+
 #import "AgendaItem.h"
 
 
-@implementation AgendaItem {
-
-}
+@implementation AgendaItem
 
 + (instancetype)itemWithTitle:(NSString *)title type:(AgendaItemType)type startDate:(NSDate *)startDate duration:(NSTimeInterval)duration speakers:(NSArray *)speakers {
     return [[self alloc] initWithTitle:title type:type startDate:startDate duration:duration speakers:speakers];

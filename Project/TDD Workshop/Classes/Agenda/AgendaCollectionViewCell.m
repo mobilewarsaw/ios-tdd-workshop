@@ -1,11 +1,15 @@
+//
+//  TDD Workshop
+//
+//  Created by Lukasz Warchol on 22/04/14.
+//  Copyright (c) 2014 Mobile Warsaw. All rights reserved.
+//
+
+
 #import "AgendaCollectionViewCell.h"
-#import "AgendaItem.h"
-#import "Speaker.h"
 
 
-@implementation AgendaCollectionViewCell {
-
-}
+@implementation AgendaCollectionViewCell
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -46,25 +50,6 @@
     label.font = [UIFont preferredFontForTextStyle:textStyle];
     label.textColor = [UIColor blackColor];
     return label;
-}
-
-#pragma mark - Configuration
-
-- (void)configureForAgendaItem:(AgendaItem *)item {
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateStyle:NSDateFormatterShortStyle];
-    [formatter setTimeStyle:NSDateFormatterMediumStyle];
-    [formatter setLocale:[NSLocale currentLocale]];
-
-    self.titleLabel.text = item.title;
-    self.startDateLabel.text = [formatter stringFromDate:item.startDate];
-    self.durationLabel.text = [NSString stringWithFormat:@"%.0fm", item.duration / 60];
-
-    NSMutableArray *speakersNames = [NSMutableArray array];
-    for (Speaker *speaker in item.speakers) {
-        [speakersNames addObject:speaker.name];
-    }
-    self.speakersLabel.text = [speakersNames componentsJoinedByString:@", "];
 }
 
 #pragma mark - Layout
