@@ -9,6 +9,7 @@
 #import "AgendaCollectionViewDataSource.h"
 #import "AgendaProvider.h"
 #import "AgendaCollectionViewCell.h"
+#import "Speaker.h"
 
 NSString *const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCellId";
 
@@ -23,6 +24,9 @@ NSString *const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCellI
 }
 
 - (void)setupWithCollectionView:(UICollectionView *)collectionView {
+    collectionView.dataSource = self;
+    [collectionView registerClass:[AgendaCollectionViewCell class]
+       forCellWithReuseIdentifier:AgendaCollectionViewCellIdentifier];
 }
 
 
@@ -33,7 +37,27 @@ NSString *const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCellI
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     AgendaCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:AgendaCollectionViewCellIdentifier
                                                                                forIndexPath:indexPath];
+    AgendaItem *agendaItem = self.agendaProvider.agendaItems[(NSUInteger) indexPath.item];
+    [self setupCell:cell forAgendaItem:agendaItem];
+
     return cell;
+}
+
+- (void)setupCell:(AgendaCollectionViewCell *)cell forAgendaItem:(AgendaItem *)agendaItem {
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setLocale:[NSLocale currentLocale]];
+
+    cell.titleLabel.text = agendaItem.title;
+    cell.startDateLabel.text = [formatter stringFromDate:agendaItem.startDate];
+    cell.durationLabel.text = [NSString stringWithFormat:@"%.0fm", agendaItem.duration / 60];
+
+    NSMutableArray *speakersNames = [NSMutableArray array];
+    for (Speaker *speaker in agendaItem.speakers) {
+        [speakersNames addObject:speaker.name];
+    }
+    cell.speakersLabel.text = [speakersNames componentsJoinedByString:@", "];
 }
 
 @end

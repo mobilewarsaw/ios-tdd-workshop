@@ -46,11 +46,11 @@ describe(@"AgendaViewController", ^{
         });
         
         it(@"should initialize agenda provider", ^{
-            expect(viewController.agendaProvider).notTo.beNil();
+            expect(viewController.agendaProvider).to.beKindOf([AgendaProvider class]);
         });
         
         it(@"should initialize agenda data source", ^{
-            expect(viewController.agendaDataSource).notTo.beNil();
+            expect(viewController.agendaDataSource).to.beKindOf([AgendaCollectionViewDataSource class]);
         });
         
         it(@"should initialize agenda data source with agenda provider", ^{
