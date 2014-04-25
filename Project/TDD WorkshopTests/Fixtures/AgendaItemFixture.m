@@ -4,6 +4,7 @@
 
 
 #import "AgendaItemFixture.h"
+#import "Speaker.h"
 
 const NSInteger HalfAnHour = 30 * 60;
 
@@ -16,7 +17,7 @@ const NSInteger HalfAnHour = 30 * 60;
         self.type = AgendaItemTypeWorkshop;
         self.duration = HalfAnHour;
         self.startDate = [NSDate dateWithTimeIntervalSince1970:0];
-        self.speakers = @[@"Bill Gates"];
+        self.speakers = @[[[Speaker alloc] initWithName:@"Bill Gates" photo:nil]];
     }
     return self;
 }

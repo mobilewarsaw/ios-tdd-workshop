@@ -7,6 +7,7 @@
 
 
 #import "AgendaCollectionViewCell.h"
+#import "UIColor+TDDWorkshop.h"
 
 
 @implementation AgendaCollectionViewCell
@@ -14,6 +15,8 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [[UIColor barsBackgroundTintColor] colorWithAlphaComponent:0.3];
+
         UIView *typeView = [UIView new];
         typeView.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:typeView];
