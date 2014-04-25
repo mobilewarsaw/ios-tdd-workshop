@@ -14,6 +14,10 @@ describe(@"AgendaProvider", ^{
     afterEach(^{
         agendaProvider = nil;
     });
+
+    it(@"should have 7 agenda items", ^{
+        expect(agendaProvider.agendaItems.count).to.equal(7);
+    });
 });
 
 SPEC_END

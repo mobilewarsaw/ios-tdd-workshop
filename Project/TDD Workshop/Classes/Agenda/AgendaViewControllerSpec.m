@@ -3,6 +3,7 @@
 #import "AgendaViewController.h"
 #import "AgendaProvider.h"
 #import "AgendaCollectionViewDataSource.h"
+#import "FakeAgendaCollectionViewDataSource.h"
 
 SPEC_BEGIN(AgendaViewController)
 
@@ -80,6 +81,22 @@ describe(@"AgendaViewController", ^{
         });
     });
 
+    describe(@"data source", ^{
+        __block FakeAgendaCollectionViewDataSource *fakeDataSource;
+        beforeEach(^{
+            fakeDataSource = [FakeAgendaCollectionViewDataSource new];
+            viewController.agendaDataSource = (id) fakeDataSource;
+
+            [viewController loadView];
+            [viewController viewDidLoad];
+        });
+        
+        it(@"should setup collection view", ^{
+            expect(fakeDataSource.setupWithCollectionViewCalled).to.beTruthy();
+            expect(fakeDataSource.passedCollectionView).to.equal(viewController.collectionView);
+        });
+    });
+
     describe(@"subviews layout", ^{
         beforeEach(^{
             [viewController viewDidLayoutSubviews];
@@ -88,19 +105,6 @@ describe(@"AgendaViewController", ^{
         it(@"should update flow layout's item size to {view.width, 66}", ^{
             UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *) viewController.collectionViewLayout;
             expect(flowLayout.itemSize).to.equal(CGSizeMake(CGRectGetWidth(viewController.view.bounds), 66));
-        });
-    });
-    
-    describe(@"collection view's data source", ^{
-        it(@"should return 1 section", ^{
-            NSInteger numberOfSections = [viewController.collectionView.dataSource numberOfSectionsInCollectionView:viewController.collectionView];
-            expect(numberOfSections).to.equal(1);
-        });
-        
-        it(@"should return 0 items for first section", ^{
-            NSInteger numberOfItems = [viewController.collectionView.dataSource collectionView:viewController.collectionView
-                                                                        numberOfItemsInSection:0];
-            expect(numberOfItems).to.equal(0);
         });
     });
 });

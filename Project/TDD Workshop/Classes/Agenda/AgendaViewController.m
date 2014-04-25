@@ -33,6 +33,8 @@
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.alwaysBounceVertical = YES;
     self.collectionView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
+
+    [self.agendaDataSource setupWithCollectionView:self.collectionView];
 }
 
 - (void)viewDidLayoutSubviews {

@@ -10,7 +10,7 @@
 #import "AgendaProvider.h"
 #import "AgendaCollectionViewCell.h"
 
-NSString * const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCellId";
+NSString *const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCellId";
 
 @implementation AgendaCollectionViewDataSource
 
@@ -27,7 +27,7 @@ NSString * const AgendaCollectionViewCellIdentifier = @"AgendaCollectionViewCell
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return self.agendaProvider.agendaItems.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
