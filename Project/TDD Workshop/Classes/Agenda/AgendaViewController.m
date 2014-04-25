@@ -16,10 +16,11 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
-		self.tabBarItem.image = [UIImage imageNamed:@"agenda"];
+        self.title = @"Agenda";
+        self.tabBarItem.image = [UIImage imageNamed:@"agenda"];
 
         self.agendaProvider = [AgendaProvider new];
-        self.agendaDataSource = [[AgendaCollectionViewDataSource alloc] initWithProvider:nil];
+        self.agendaDataSource = [[AgendaCollectionViewDataSource alloc] initWithProvider:self.agendaProvider];
     }
     return self;
 }
@@ -28,7 +29,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Setup collection view.
+
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.alwaysBounceVertical = YES;
+    self.collectionView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
 }
 
 - (void)viewDidLayoutSubviews {

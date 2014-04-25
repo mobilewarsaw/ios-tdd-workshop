@@ -24,23 +24,37 @@ describe(@"AgendaViewController", ^{
     });
 
     describe(@"tab bar item", ^{
-        it(@"should have a agenda image", PENDING);
+        __block UITabBarItem *item;
 
-        it(@"should have a 'Agenda' title", PENDING);
+        beforeEach(^{
+            item = [viewController tabBarItem];
+        });
+
+        it(@"should have a agenda image", ^{
+            expect(item.selectedImage).to.equal([UIImage imageNamed:@"agenda"]);
+        });
+
+        it(@"should have a 'Agenda' title", ^{
+            expect(item.title).to.equal(@"Agenda");
+        });
     });
-
+    
     describe(@"setup", ^{
-        it(@"should use UICollectionViewFlowLayout", PENDING);
-
+        it(@"should use UICollectionViewFlowLayout", ^{
+            expect(viewController.collectionViewLayout).to.beInstanceOf([UICollectionViewFlowLayout class]);
+        });
+        
         it(@"should initialize agenda provider", ^{
             expect(viewController.agendaProvider).notTo.beNil();
         });
-
+        
         it(@"should initialize agenda data source", ^{
             expect(viewController.agendaDataSource).notTo.beNil();
         });
-
-        it(@"should initialize agenda data source with agenda provider", PENDING);
+        
+        it(@"should initialize agenda data source with agenda provider", ^{
+            expect(viewController.agendaDataSource.agendaProvider).to.equal(viewController.agendaProvider);
+        });
     });
 
     describe(@"loaded collection view", ^{
@@ -53,11 +67,17 @@ describe(@"AgendaViewController", ^{
             collectionView = viewController.collectionView;
         });
 
-        it(@"should have white background color", PENDING); //HINT: backgroundColor
+        it(@"should have white background color", ^{
+            expect(collectionView.backgroundColor).to.equal([UIColor whiteColor]);
+        });
 
-        it(@"should always bounce verticaly", PENDING);     //HINT: alwaysBounceVertical
+        it(@"should always bounce verticaly", ^{
+            expect(collectionView.alwaysBounceVertical).to.beTruthy();
+        });
 
-        it(@"should should be inseted by 10 px from top and bottom", PENDING); //HINT: contentInset
+        it(@"should should be inseted by 10 px from top and bottom", ^{
+            expect(collectionView.contentInset).to.equal(UIEdgeInsetsMake(10, 0, 10, 0));
+        });
     });
 
     describe(@"subviews layout", ^{
@@ -65,16 +85,23 @@ describe(@"AgendaViewController", ^{
             [viewController viewDidLayoutSubviews];
         });
 
-        it(@"should update flow layout's item size to {view.width, 66}", PENDING);
+        it(@"should update flow layout's item size to {view.width, 66}", ^{
+            UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *) viewController.collectionViewLayout;
+            expect(flowLayout.itemSize).to.equal(CGSizeMake(CGRectGetWidth(viewController.view.bounds), 66));
+        });
     });
-
+    
     describe(@"collection view's data source", ^{
         it(@"should return 1 section", ^{
             NSInteger numberOfSections = [viewController.collectionView.dataSource numberOfSectionsInCollectionView:viewController.collectionView];
             expect(numberOfSections).to.equal(1);
         });
-
-        it(@"should return 0 items for first section", PENDING);
+        
+        it(@"should return 0 items for first section", ^{
+            NSInteger numberOfItems = [viewController.collectionView.dataSource collectionView:viewController.collectionView
+                                                                        numberOfItemsInSection:0];
+            expect(numberOfItems).to.equal(0);
+        });
     });
 });
 
