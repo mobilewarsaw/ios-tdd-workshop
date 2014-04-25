@@ -63,6 +63,8 @@ describe(@"SpeakersCollectionViewDataSource", ^{
                 it(@"should set the text of name label on cell to first speakers name", ^{
                     expect(cell.nameLabel.text).to.equal(@"Fixture Name 1");
                 });
+
+
             });
 
             context(@"when it's the second row", ^{
@@ -75,6 +77,9 @@ describe(@"SpeakersCollectionViewDataSource", ^{
                 it(@"should set the text of name label on cell to first speakers name", ^{
                     expect(cell.nameLabel.text).to.equal(@"Fixture Name 2");
                 });
+
+
+
             });
         });
     });

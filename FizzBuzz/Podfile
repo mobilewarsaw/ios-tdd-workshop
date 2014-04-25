@@ -1,0 +1,11 @@
+platform :ios, '7.0'
+
+xcodeproj 'FizzBuzz'
+
+target :specs do
+  link_with 'FizzBuzzSpecs'
+
+  pod 'Specta'
+  pod 'Expecta'
+  pod 'OCMockito'
+end

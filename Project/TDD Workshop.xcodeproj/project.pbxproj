@@ -568,7 +568,7 @@
 				ORGANIZATIONNAME = "Mobile Warsaw";
 				TargetAttributes = {
 					43C5D4D41904429F002D1766 = {
-						TestTargetID = 43C5D4B01904429F002D1766;
+						TestTargetID = 43C5D4B01904429F002D1766 /* TDD Workshop */;
 					};
 				};
 			};
