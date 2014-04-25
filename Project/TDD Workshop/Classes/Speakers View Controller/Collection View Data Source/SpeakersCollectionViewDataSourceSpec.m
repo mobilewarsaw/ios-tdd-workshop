@@ -11,8 +11,8 @@ describe(@"SpeakersCollectionViewDataSource", ^{
     __block SpeakersCollectionViewDataSource *collectionViewDataSource;
 
     beforeEach(^{
-        Speaker *fixtureSpeaker1 = [[Speaker alloc] initWithName:@"Fixture Name 1" photo:nil ];
-        Speaker *fixtureSpeaker2 = [[Speaker alloc] initWithName:@"Fixture Name 2" photo:nil ];
+        Speaker *fixtureSpeaker1 = [[Speaker alloc] initWithName:@"Fixture Name 1" photo:nil];
+        Speaker *fixtureSpeaker2 = [[Speaker alloc] initWithName:@"Fixture Name 2" photo:nil];
 
         NSArray *speakers = @[fixtureSpeaker1, fixtureSpeaker2];
 

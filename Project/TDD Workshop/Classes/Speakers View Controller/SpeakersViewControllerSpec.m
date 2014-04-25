@@ -2,6 +2,7 @@
 
 #import "SpeakersViewController.h"
 #import "SpeakersCollectionViewDataSource.h"
+#import "Speaker.h"
 
 SPEC_BEGIN(SpeakersViewController)
 
@@ -56,6 +57,19 @@ describe(@"SpeakersViewController", ^{
             it(@"should have 4 speakers", ^{
                 expect(speakers).to.haveCountOf(4);
             });
+
+            describe(@"first speaker", ^{
+
+                __block Speaker *speaker;
+
+                beforeEach(^{
+                    speaker = speakers[0];
+                });
+
+                it(@"should have a name", ^{
+                    expect(speaker.name).to.equal(@"Paweł Dudek");
+                });
+            });
         });
     });
 
@@ -79,18 +93,15 @@ describe(@"SpeakersViewController", ^{
                 layout = (UICollectionViewFlowLayout *) [collectionView collectionViewLayout];
             });
 
-            it(@"should be a flow layout", ^{
-                expect(layout).to.beKindOf([UICollectionViewFlowLayout class]);
-            });
-
             describe(@"when the view lays out it subviews", ^{
+
                 beforeEach(^{
                     viewController.view.bounds = CGRectMake(0, 0, 42, 22);
                     [viewController.view layoutIfNeeded];
                 });
 
                 it(@"should set item size on the collection view layout", ^{
-                    expect(layout.itemSize).to.equal(CGSizeMake(42, 50));
+                    expect(layout.itemSize).to.equal(CGSizeMake(42, 80));
                 });
             });
         });
