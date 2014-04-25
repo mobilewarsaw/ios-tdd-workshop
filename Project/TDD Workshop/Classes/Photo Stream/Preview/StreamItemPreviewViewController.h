@@ -7,7 +7,7 @@
 
 @class StreamItem;
 
-@interface StreamPreviewItemViewController : UIViewController
+@interface StreamItemPreviewViewController : UIViewController
 @property(nonatomic, strong) StreamItem *streamItem;
 
 - (instancetype)initWithStreamItem:(StreamItem *)streamItem;

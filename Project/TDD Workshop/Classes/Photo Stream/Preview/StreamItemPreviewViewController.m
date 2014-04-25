@@ -3,11 +3,11 @@
 //  
 
 
-#import "StreamPreviewItemViewController.h"
+#import "StreamItemPreviewViewController.h"
 #import "StreamItem.h"
 
 
-@implementation StreamPreviewItemViewController
+@implementation StreamItemPreviewViewController
 
 #pragma mark - Object life cycle
 

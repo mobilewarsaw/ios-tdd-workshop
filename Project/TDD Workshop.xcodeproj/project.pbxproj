@@ -22,12 +22,13 @@
 		43C5D4D91904429F002D1766 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C5D4B81904429F002D1766 /* UIKit.framework */; };
 		43C5D4E11904429F002D1766 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43C5D4DF1904429F002D1766 /* InfoPlist.strings */; };
 		43C5D4ED19046E83002D1766 /* Speakers.JSON in Resources */ = {isa = PBXBuildFile; fileRef = B27A9BEE6F48E39B73B68281 /* Speakers.JSON */; };
-		510431358E25B1DCFAED9960 /* StreamPreviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043DE94D02BF3DAD3C447E /* StreamPreviewItemViewController.m */; };
+		510430CE778A22D93A35BC09 /* StreamItemPreviewViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5104396E024236D211BE68A7 /* StreamItemPreviewViewControllerSpec.m */; };
+		510431358E25B1DCFAED9960 /* StreamItemPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043DE94D02BF3DAD3C447E /* StreamItemPreviewViewController.m */; };
 		510431791B37A9A99385A641 /* CracowConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043AB14D427734F191F4B3 /* CracowConfiguration.m */; };
 		510431F36EDABCA7A7E84118 /* StreamItemCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 510434BAAD88EC50EEB039B1 /* StreamItemCreator.m */; };
 		51043272B3AC04BC4C345854 /* CracowConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043AB14D427734F191F4B3 /* CracowConfiguration.m */; };
 		5104331ABB398764EB039A38 /* StreamItemUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 510437936BA1CFAE94AA5BBB /* StreamItemUploader.m */; };
-		5104345F6DBD18816241E3F3 /* StreamPreviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043DE94D02BF3DAD3C447E /* StreamPreviewItemViewController.m */; };
+		5104345F6DBD18816241E3F3 /* StreamItemPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51043DE94D02BF3DAD3C447E /* StreamItemPreviewViewController.m */; };
 		510434A8BD8A51FD6A30E5E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5104345744CA86EDD8BC6565 /* Localizable.strings */; };
 		510434B6A43EA784E14ADCCE /* StreamItemUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 510437936BA1CFAE94AA5BBB /* StreamItemUploader.m */; };
 		51043516EF8246EF55CD424E /* StreamItemCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 510434BAAD88EC50EEB039B1 /* StreamItemCreator.m */; };
@@ -113,7 +114,7 @@
 		43C5D4EC190447DE002D1766 /* Specs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Specs.h; sourceTree = "<group>"; };
 		4442B29770594D57863624A3 /* Pods-specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-specs.xcconfig"; path = "Pods/Pods-specs.xcconfig"; sourceTree = "<group>"; };
 		510430351EDD2ECC10DB5F0C /* PhotoStreamViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewControllerSpec.m; sourceTree = "<group>"; };
-		510431497BD5ED2FA70D4A3C /* StreamPreviewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamPreviewItemViewController.h; sourceTree = "<group>"; };
+		510431497BD5ED2FA70D4A3C /* StreamItemPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItemPreviewViewController.h; sourceTree = "<group>"; };
 		51043207E6DA7C07E54F2B88 /* PhotoStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewController.m; sourceTree = "<group>"; };
 		510432AAC735F6797D1522FB /* StreamItemCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItemCreator.h; sourceTree = "<group>"; };
 		5104335135485178594E1772 /* Configurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configurator.h; sourceTree = "<group>"; };
@@ -133,13 +134,14 @@
 		510437B92629399AA5A617E6 /* PhotoStreamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamCell.m; sourceTree = "<group>"; };
 		5104384BE0B04D91B48B5A49 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		510438A1415624392BB038A8 /* CracowConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CracowConfiguration.h; sourceTree = "<group>"; };
+		5104396E024236D211BE68A7 /* StreamItemPreviewViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemPreviewViewControllerSpec.m; sourceTree = "<group>"; };
 		510439AF098214E645561005 /* PhotoStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamViewController.h; sourceTree = "<group>"; };
 		510439BD510B17C8EEF28909 /* ImageResizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResizer.m; sourceTree = "<group>"; };
 		51043AB14D427734F191F4B3 /* CracowConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CracowConfiguration.m; sourceTree = "<group>"; };
 		51043B6325427C8FAF2CAAEE /* StreamItemDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemDownloader.m; sourceTree = "<group>"; };
 		51043C0A7BD0895BF7021DFB /* ConfigurationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationFactory.m; sourceTree = "<group>"; };
 		51043C7AD35D283FC3A8997B /* StreamItemTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemTransformer.m; sourceTree = "<group>"; };
-		51043DE94D02BF3DAD3C447E /* StreamPreviewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamPreviewItemViewController.m; sourceTree = "<group>"; };
+		51043DE94D02BF3DAD3C447E /* StreamItemPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItemPreviewViewController.m; sourceTree = "<group>"; };
 		51043F16E2B9F624D87DD1E0 /* StreamItemUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItemUploader.h; sourceTree = "<group>"; };
 		810863A399DF2C73F86CBB3C /* Agenda.JSON */ = {isa = PBXFileReference; lastKnownFileType = file.JSON; path = Agenda.JSON; sourceTree = "<group>"; };
 		B1988BE4051D4DB1BD8289FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -330,8 +332,9 @@
 		510431EE5B6B07FE13F635DD /* Preview */ = {
 			isa = PBXGroup;
 			children = (
-				510431497BD5ED2FA70D4A3C /* StreamPreviewItemViewController.h */,
-				51043DE94D02BF3DAD3C447E /* StreamPreviewItemViewController.m */,
+				510431497BD5ED2FA70D4A3C /* StreamItemPreviewViewController.h */,
+				51043DE94D02BF3DAD3C447E /* StreamItemPreviewViewController.m */,
+				5104396E024236D211BE68A7 /* StreamItemPreviewViewControllerSpec.m */,
 			);
 			path = Preview;
 			sourceTree = "<group>";
@@ -720,7 +723,7 @@
 				B27A9971BB928EAA6E0EDE6E /* AgendaProvider.m in Sources */,
 				B27A9CC866FDAA137CF8BDB1 /* AgendaCollectionViewCell.m in Sources */,
 				B27A9D81BB54BDA1E692BA0F /* AgendaCollectionViewDataSource.m in Sources */,
-				510431358E25B1DCFAED9960 /* StreamPreviewItemViewController.m in Sources */,
+				510431358E25B1DCFAED9960 /* StreamItemPreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,7 +757,8 @@
 				B27A93BC50952551175D197B /* SpeakerDetailsViewControllerSpec.m in Sources */,
 				1EDB885EAA0CA775A8707F6E /* FakeCollectionView.m in Sources */,
 				1EDB8E63A5547729FE9E90FB /* AgendaItemFixture.m in Sources */,
-				5104345F6DBD18816241E3F3 /* StreamPreviewItemViewController.m in Sources */,
+				5104345F6DBD18816241E3F3 /* StreamItemPreviewViewController.m in Sources */,
+				510430CE778A22D93A35BC09 /* StreamItemPreviewViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
