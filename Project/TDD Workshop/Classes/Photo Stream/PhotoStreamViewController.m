@@ -7,7 +7,7 @@
 #import "StreamItem.h"
 #import "PhotoStreamLayout.h"
 #import "PhotoStreamCell.h"
-#import "StreamItemViewController.h"
+#import "StreamPreviewItemViewController.h"
 
 @interface PhotoStreamViewController ()
 @property(nonatomic, strong) UIRefreshControl *refreshControl;
@@ -92,7 +92,7 @@ NSString * const PhotoStreamViewControllerCellId = @"PhotoStreamViewControllerCe
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     StreamItem *streamItem = self.streamItems[(NSUInteger) indexPath.item];
-    StreamItemViewController *streamItemViewController = [StreamItemViewController controllerWithStreamItem:streamItem];
+    StreamPreviewItemViewController *streamItemViewController = [StreamPreviewItemViewController controllerWithStreamItem:streamItem];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:streamItemViewController];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
