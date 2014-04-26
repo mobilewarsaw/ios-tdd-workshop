@@ -3,6 +3,7 @@
 #import "SpeakersViewController.h"
 #import "SpeakersCollectionViewDataSource.h"
 #import "Speaker.h"
+#import "SpeakersCollectionViewLayout.h"
 
 SPEC_BEGIN(SpeakersViewController)
 
@@ -91,6 +92,10 @@ describe(@"SpeakersViewController", ^{
 
             beforeEach(^{
                 layout = (UICollectionViewFlowLayout *) [collectionView collectionViewLayout];
+            });
+
+            it(@"should have a speakers collection view layout", ^{
+                expect(layout).to.beKindOf([SpeakersCollectionViewLayout class]);
             });
 
             describe(@"when the view lays out it subviews", ^{

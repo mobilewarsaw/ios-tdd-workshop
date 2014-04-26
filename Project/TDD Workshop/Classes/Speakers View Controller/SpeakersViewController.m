@@ -11,11 +11,12 @@
 #import "Speaker.h"
 #import "SpeakerCollectionViewCell.h"
 #import "SpeakerDetailsViewController.h"
+#import "SpeakersCollectionViewLayout.h"
 
 @implementation SpeakersViewController
 
 - (id)init {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *layout = [[SpeakersCollectionViewLayout alloc] init];
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         _speakers = [self defaultSpeakers];
