@@ -31,6 +31,7 @@ NSString *SpeakersCollectionViewCellIdentifier = @"SpeakersCollectionViewCellIde
                                                                            forIndexPath:indexPath];
     Speaker *speaker = self.speakers[(NSUInteger) indexPath.row];
     cell.nameLabel.text = speaker.name;
+    cell.imageView.image = speaker.photo;
     return cell;
 }
 

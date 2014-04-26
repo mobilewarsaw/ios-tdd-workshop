@@ -10,9 +10,15 @@ SPEC_BEGIN(SpeakersCollectionViewDataSource)
 describe(@"SpeakersCollectionViewDataSource", ^{
     __block SpeakersCollectionViewDataSource *collectionViewDataSource;
 
+    __block UIImage *speaker1Image;
+    __block UIImage *speaker2Image;
+
     beforeEach(^{
-        Speaker *fixtureSpeaker1 = [[Speaker alloc] initWithName:@"Fixture Name 1" photo:nil];
-        Speaker *fixtureSpeaker2 = [[Speaker alloc] initWithName:@"Fixture Name 2" photo:nil];
+        speaker1Image = [[UIImage alloc] init];
+        speaker2Image = [[UIImage alloc] init];
+
+        Speaker *fixtureSpeaker1 = [[Speaker alloc] initWithName:@"Fixture Name 1" photo:speaker1Image];
+        Speaker *fixtureSpeaker2 = [[Speaker alloc] initWithName:@"Fixture Name 2" photo:speaker2Image];
 
         NSArray *speakers = @[fixtureSpeaker1, fixtureSpeaker2];
 
@@ -64,7 +70,9 @@ describe(@"SpeakersCollectionViewDataSource", ^{
                     expect(cell.nameLabel.text).to.equal(@"Fixture Name 1");
                 });
 
-
+                it(@"should have an image", ^{
+                    expect(cell.imageView.image).to.equal(speaker1Image);
+                });
             });
 
             context(@"when it's the second row", ^{
@@ -78,8 +86,9 @@ describe(@"SpeakersCollectionViewDataSource", ^{
                     expect(cell.nameLabel.text).to.equal(@"Fixture Name 2");
                 });
 
-
-
+                it(@"should have an image", ^{
+                    expect(cell.imageView.image).to.equal(speaker2Image);
+                });
             });
         });
     });
