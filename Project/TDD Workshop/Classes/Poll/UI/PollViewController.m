@@ -9,6 +9,7 @@
 #import "PollTextView.h"
 #import "PollSliderItem.h"
 #import "Poll.h"
+#import "ViewValidatorFactory.h"
 
 @implementation PollViewController
 
@@ -65,12 +66,20 @@
 
 - (void)configureControlCallbacks {
     self.castView.nameField.textField.delegate = self;
+    self.castView.nameField.textField.tag = ValidatorTypeName;
     self.castView.emailField.textField.delegate = self;
+    self.castView.emailField.textField.tag = ValidatorTypeEmail;
     self.castView.commentsView.textView.delegate = self;
+    self.castView.commentsView.textView.tag = ValidatorTypeComment;
 }
 
 - (void)didTapDone:(id)sender {
-    [self displayAlertViewWithText:@"You can send it only once. Do you want to continue?" delegate:self];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                        message:@"You can send it only once. Do you want to continue?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"OK", nil];
+    [alertView show];
 }
 
 #pragma mark - Actions
@@ -114,47 +123,13 @@
 #pragma mark - Delegates
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if ([textField.text length] == 0) {
-        return;
-    }
-    if ([textField isEqual:self.castView.emailField.textField]) {
-        if (![self isValidEmail:textField.text]) {
-            [self displayAlertViewWithText:@"Wrong email!" delegate:nil];
-            textField.text = @"";
-        }
-    } else if ([textField isEqual:self.castView.nameField.textField]) {
-        if ([textField.text rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound) {
-            [self displayAlertViewWithText:@"Wrong characters!" delegate:nil];
-            textField.text = @"";
-        }
-    }
+    id <Validating> validator = [ViewValidatorFactory validatorForView:textField];
+    [validator validateText:textField.text];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-    if ([textView.text length] < 10) {
-        [self displayAlertViewWithText:@"Too less characters!" delegate:nil];
-        textView.text = @"";
-    }
-}
-
-#pragma mark - Helpers
-
-- (BOOL)isValidEmail:(NSString *)checkString {
-    BOOL stricterFilter = YES;
-    NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
-    NSString *laxString = @".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*";
-    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:checkString];
-}
-
-- (void)displayAlertViewWithText:(NSString *)text delegate:(id)delegate {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Info"
-                                                        message:text
-                                                       delegate:delegate
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"OK", nil];
-    [alertView show];
+    id <Validating> validator = [ViewValidatorFactory validatorForView:textView];
+    [validator validateText:textView.text];
 }
 
 @end
