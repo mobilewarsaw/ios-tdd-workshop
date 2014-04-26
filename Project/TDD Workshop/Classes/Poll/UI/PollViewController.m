@@ -13,11 +13,12 @@
 
 @implementation PollViewController
 
-- (instancetype)initWithPollManager:(PollManager *)pollManager agendaProvider:(AgendaProvider *)agendaProvider {
+- (instancetype)initWithPollManager:(PollManager *)pollManager agendaProvider:(AgendaProvider *)agendaProvider validatorFactory:(ViewValidatorFactory *)validatorFactory {
     self = [super init];
     if (self) {
         _pollManager = pollManager;
         _agendaProvider = agendaProvider;
+        _validatorFactory = validatorFactory;
 
         self.title = pollManager.title;
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:pollManager.title
@@ -123,12 +124,12 @@
 #pragma mark - Delegates
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    id <Validating> validator = [ViewValidatorFactory validatorForView:textField];
+    id <Validating> validator = [self.validatorFactory validatorForView:textField];
     [validator validateText:textField.text];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-    id <Validating> validator = [ViewValidatorFactory validatorForView:textView];
+    id <Validating> validator = [self.validatorFactory validatorForView:textView];
     [validator validateText:textView.text];
 }
 

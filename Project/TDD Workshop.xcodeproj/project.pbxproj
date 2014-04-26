@@ -56,6 +56,7 @@
 		8108618342CE3920552B0D80 /* Poll.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086E6021AE14C1F87E9B1B /* Poll.m */; };
 		810861A425652A5114611562 /* CommentValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086D38C45A12013087D372 /* CommentValidator.m */; };
 		810861ABBF47988687902610 /* ViewValidatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086AB892D0D96B70845F9A /* ViewValidatorFactory.m */; };
+		8108623605FE3E730D2F7ACE /* FakeViewValidatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086A10BFA7B0A80AE1DC6E /* FakeViewValidatorFactory.m */; };
 		8108632DC13EC8A20D155989 /* EMailValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086C4AE087835C90C35D21 /* EMailValidatorSpec.m */; };
 		81086445592BEC5457D4163D /* NSLayoutConstraint+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8108658947B4BF9E7612FDE6 /* NSLayoutConstraint+Utilities.m */; };
 		810864B2A94D0D43BBEAF612 /* ViewValidatorFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 810868438A11F8996B8EC76D /* ViewValidatorFactorySpec.m */; };
@@ -67,6 +68,7 @@
 		810866B138C3E04FB14466FC /* PollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 810867D57EB6024B3BB3AFC1 /* PollViewController.m */; };
 		810866F1FE320FA1B2B2F023 /* Agenda.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 810863A399DF2C73F86CBB3C /* Agenda.JSON */; };
 		81086747DA487D249A16BAFE /* PollSliderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 810865CD1845B24926B9304F /* PollSliderItem.m */; };
+		8108679077A588DAFEA31B68 /* SpecValidatorFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086D2899CC381180133247 /* SpecValidatorFixture.m */; };
 		810868C67B5D309FA50BE791 /* AgendaProvider+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086306084AE59953A39AB2 /* AgendaProvider+SharedInstance.m */; };
 		810869222C047725078E7155 /* EMailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8108603216FB4C0AF321CF59 /* EMailValidator.m */; };
 		81086957A49032A43D58644F /* NameValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 81086CE423EADE2E84F256E8 /* NameValidator.m */; };
@@ -197,20 +199,24 @@
 		8108690BD9973061F45B5948 /* PollSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollSlider.h; sourceTree = "<group>"; };
 		8108690D54A645B80415A792 /* Validating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validating.h; sourceTree = "<group>"; };
 		810869D23166246A67515C7D /* CommentValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentValidatorSpec.m; sourceTree = "<group>"; };
+		81086A10BFA7B0A80AE1DC6E /* FakeViewValidatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeViewValidatorFactory.m; sourceTree = "<group>"; };
 		81086AB892D0D96B70845F9A /* ViewValidatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewValidatorFactory.m; sourceTree = "<group>"; };
 		81086B00684003C35FE988C4 /* PollManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollManager.m; sourceTree = "<group>"; };
 		81086B0D9ED2535E7BDB6F6A /* PollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollTextView.m; sourceTree = "<group>"; };
 		81086B855A991D6B8C406F44 /* NameValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameValidator.h; sourceTree = "<group>"; };
+		81086B8B7F531CD78206A31C /* FakeViewValidatorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeViewValidatorFactory.h; sourceTree = "<group>"; };
 		81086BDF1E34DBE4C9C5205D /* FakePollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakePollViewController.m; sourceTree = "<group>"; };
 		81086C4AE087835C90C35D21 /* EMailValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMailValidatorSpec.m; sourceTree = "<group>"; };
 		81086C9C3664DABFE46AD77B /* PollSliderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollSliderItem.h; sourceTree = "<group>"; };
 		81086CE423EADE2E84F256E8 /* NameValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameValidator.m; sourceTree = "<group>"; };
+		81086D2899CC381180133247 /* SpecValidatorFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecValidatorFixture.m; sourceTree = "<group>"; };
 		81086D2C036BDF1D371518B8 /* BaseValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseValidator.h; sourceTree = "<group>"; };
 		81086D38C45A12013087D372 /* CommentValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentValidator.m; sourceTree = "<group>"; };
 		81086DB7AF1DA1000E168C97 /* PollManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollManagerSpec.m; sourceTree = "<group>"; };
 		81086E6021AE14C1F87E9B1B /* Poll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poll.m; sourceTree = "<group>"; };
 		81086EB1C3531358D53E1ED6 /* NameValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameValidatorSpec.m; sourceTree = "<group>"; };
 		81086ED2C460280A242A411A /* EMailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMailValidator.h; sourceTree = "<group>"; };
+		81086F9A7C04B9BEB5369E32 /* SpecValidatorFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecValidatorFixture.h; sourceTree = "<group>"; };
 		81086FD55CC1316A7DC6B195 /* FakePollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakePollViewController.h; sourceTree = "<group>"; };
 		81086FFD6A2E06064ABAE888 /* NSLayoutConstraint+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Utilities.h"; sourceTree = "<group>"; };
 		B1988BE4051D4DB1BD8289FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -291,6 +297,8 @@
 			children = (
 				1EDB86E908039895488C9398 /* AgendaItemFixture.m */,
 				1EDB8BDFB344DF3A32724382 /* AgendaItemFixture.h */,
+				81086D2899CC381180133247 /* SpecValidatorFixture.m */,
+				81086F9A7C04B9BEB5369E32 /* SpecValidatorFixture.h */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -310,6 +318,8 @@
 				8108629CFD0BEA91E271C917 /* FakePollAgendaProvider.h */,
 				81086BDF1E34DBE4C9C5205D /* FakePollViewController.m */,
 				81086FD55CC1316A7DC6B195 /* FakePollViewController.h */,
+				81086A10BFA7B0A80AE1DC6E /* FakeViewValidatorFactory.m */,
+				81086B8B7F531CD78206A31C /* FakeViewValidatorFactory.h */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -977,6 +987,8 @@
 				81086E08743535459E49938D /* NameValidatorSpec.m in Sources */,
 				81086F237B4A2C984AB5367E /* CommentValidatorSpec.m in Sources */,
 				8108632DC13EC8A20D155989 /* EMailValidatorSpec.m in Sources */,
+				8108623605FE3E730D2F7ACE /* FakeViewValidatorFactory.m in Sources */,
+				8108679077A588DAFEA31B68 /* SpecValidatorFixture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

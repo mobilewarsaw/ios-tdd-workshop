@@ -8,6 +8,16 @@
 SpecBegin(ViewValidatorFactorySpec)
 
 describe(@"ViewValidatorFactory", ^{
+    __block ViewValidatorFactory *factory;
+
+    beforeEach(^{
+        factory = [ViewValidatorFactory new];
+    });
+
+    afterEach(^{
+        factory = nil;
+    });
+
     describe(@"validators creation", ^{
         __block UIView *inputView;
 
@@ -25,7 +35,7 @@ describe(@"ViewValidatorFactory", ^{
             });
             
             it(@"should create name validator", ^{
-                id <Validating> object = [ViewValidatorFactory validatorForView:inputView];
+                id <Validating> object = [factory validatorForView:inputView];
                 expect(object).to.beKindOf([NameValidator class]);
             });
         });
@@ -36,7 +46,7 @@ describe(@"ViewValidatorFactory", ^{
             });
 
             it(@"should create name validator", ^{
-                id <Validating> object = [ViewValidatorFactory validatorForView:inputView];
+                id <Validating> object = [factory validatorForView:inputView];
                 expect(object).to.beKindOf([EMailValidator class]);
             });
         });
@@ -47,7 +57,7 @@ describe(@"ViewValidatorFactory", ^{
             });
 
             it(@"should create name validator", ^{
-                id <Validating> object = [ViewValidatorFactory validatorForView:inputView];
+                id <Validating> object = [factory validatorForView:inputView];
                 expect(object).to.beKindOf([CommentValidator class]);
             });
         });

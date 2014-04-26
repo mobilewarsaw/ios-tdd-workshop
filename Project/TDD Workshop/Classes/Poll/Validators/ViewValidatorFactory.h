@@ -9,6 +9,6 @@ typedef NS_ENUM(NSInteger , ValidatorType) {
 
 @interface ViewValidatorFactory : NSObject
 
-+ (id <Validating>)validatorForView:(UIView *)view;
+- (id <Validating>)validatorForView:(UIView *)view;
 
 @end

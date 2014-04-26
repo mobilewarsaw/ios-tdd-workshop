@@ -6,11 +6,13 @@
 
 @implementation ViewValidatorFactory
 
-+ (id <Validating>)validatorForView:(UIView *)view {
+
+
+- (id <Validating>)validatorForView:(UIView *)view {
     return [[self validatorsMap][@(view.tag)] new];
 }
 
-+ (NSDictionary *)validatorsMap {
+- (NSDictionary *)validatorsMap {
     return @{
         @(ValidatorTypeName) : [NameValidator class],
         @(ValidatorTypeEmail) : [EMailValidator class],

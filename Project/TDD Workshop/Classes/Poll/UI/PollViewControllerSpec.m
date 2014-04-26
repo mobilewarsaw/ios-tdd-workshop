@@ -4,19 +4,24 @@
 #import "FakePollAgendaProvider.h"
 #import "FakePollManager.h"
 #import "FakePollViewController.h"
+#import "FakeViewValidatorFactory.h"
+#import "SpecValidatorFixture.h"
 
 SpecBegin(PollViewControllerSpec)
 
 describe(@"PollViewController", ^{
     __block PollViewController *controller;
-    __block FakePollAgendaProvider *agendaProvider;
+    __block AgendaProvider *agendaProvider;
     __block FakePollManager *pollManager;
+    __block FakeViewValidatorFactory *validatorFactory;
 
     beforeEach(^{
         agendaProvider = [FakePollAgendaProvider new];
         pollManager = [FakePollManager new];
+        validatorFactory = [FakeViewValidatorFactory new];
         controller = [[PollViewController alloc] initWithPollManager:pollManager
-                                                      agendaProvider:agendaProvider];
+                                                      agendaProvider:agendaProvider
+                                                    validatorFactory:validatorFactory];
     });
 
     afterEach(^{
@@ -55,18 +60,19 @@ describe(@"PollViewController", ^{
         });
 
         describe(@"first way", ^{
-            it(@"should set navigation item", ^{
-                pollManager.pollCompletedFlag = NO;
+            beforeEach(^{
                 [controller loadView];
                 [controller viewDidLoad];
+            });
+
+            it(@"should set navigation item", ^{
+                pollManager.pollCompletedFlag = NO;
                 [controller viewWillAppear:NO];
                 expect(controller.navigationItem.rightBarButtonItem).notTo.beNil();
             });
 
             it(@"should nil out navigation item", ^{
                 pollManager.pollCompletedFlag = YES;
-                [controller loadView];
-                [controller viewDidLoad];
                 [controller viewWillAppear:NO];
                 expect(controller.navigationItem.rightBarButtonItem).to.beNil();
             });
@@ -90,6 +96,26 @@ describe(@"PollViewController", ^{
                 [controller viewWillAppear:NO];
                 expect([(FakePollViewController *)controller didCallConfigureRightNavigationItem]).to.beTruthy();
             });
+        });
+
+    });
+
+    describe(@"validating in delegates", ^{
+        __block SpecValidatorFixture *validator;
+
+        beforeEach(^{
+            validator = [SpecValidatorFixture new];
+            validatorFactory.validator = validator;
+        });
+
+        it(@"should validate text for text field editing", ^{
+            [controller textFieldDidEndEditing:nil];
+            expect(validator.didCallValidateText).to.beTruthy();
+        });
+
+        it(@"should validate text for text view end editing", ^{
+            [controller textViewDidEndEditing:nil];
+            expect(validator.didCallValidateText).to.beTruthy();
         });
 
     });
