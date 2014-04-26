@@ -18,7 +18,7 @@ describe(@"PollManager", ^{
     describe(@"initialization", ^{
 
         it(@"should return proper title", ^{
-            expect(manager.title).to.equal(@"title");
+            expect(manager.title).to.equal(@"Poll");
         });
 
     });

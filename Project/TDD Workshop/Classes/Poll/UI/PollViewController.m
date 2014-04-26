@@ -9,16 +9,17 @@
 #import "PollTextView.h"
 #import "PollSliderItem.h"
 #import "Poll.h"
-#import "AgendaProvider+SharedInstance.h"
-
 
 @implementation PollViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (instancetype)initWithPollManager:(PollManager *)pollManager agendaProvider:(AgendaProvider *)agendaProvider {
+    self = [super init];
     if (self) {
-        self.title = [PollManager sharedInstance].title;
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title
+        _pollManager = pollManager;
+        _agendaProvider = agendaProvider;
+
+        self.title = pollManager.title;
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:pollManager.title
                                                         image:[[UIImage imageNamed:@"Poll"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
                                                           tag:0];
         [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
@@ -31,10 +32,10 @@
     return (PollView *) self.view;
 }
 
+#pragma mark - UIViewController
+
 - (void)loadView {
-    NSArray *items = [AgendaProvider sharedInstance].agendaItems;
-    PollView *view = [[PollView alloc] initWithAgendaItem:items];
-    self.view = view;
+    self.view = [[PollView alloc] initWithAgendaItem:self.agendaProvider.agendaItems];
 }
 
 - (void)viewDidLoad {
@@ -44,18 +45,23 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    BOOL pollCompleted = [PollManager sharedInstance].isPollCompleted;
-    [self.castView setPollCompleted:pollCompleted];
-    if (!pollCompleted) {
+    [self configureRightNavigationItem:self.pollManager.isPollCompleted];
+    [self.castView setPollCompleted:self.pollManager.isPollCompleted];
+}
+
+- (void)configureRightNavigationItem:(BOOL)isPollCompleted {
+    if (!isPollCompleted) {
         UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Send"
                                                                  style:UIBarButtonItemStyleDone
                                                                 target:self
                                                                 action:@selector(didTapDone:)];
-        [self.navigationItem setRightBarButtonItem:item animated:YES];
+        self.navigationItem.rightBarButtonItem = item;
     } else {
         self.navigationItem.rightBarButtonItem = nil;
     }
 }
+
+#pragma mark - Config
 
 - (void)configureControlCallbacks {
     self.castView.nameField.textField.delegate = self;
@@ -67,30 +73,45 @@
     [self displayAlertViewWithText:@"You can send it only once. Do you want to continue?" delegate:self];
 }
 
+#pragma mark - Actions
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    BOOL shouldSendData = buttonIndex != alertView.cancelButtonIndex && ![PollManager sharedInstance].isPollCompleted;
-    if (shouldSendData) {
-
-        NSMutableArray *agendaPollValues = [NSMutableArray array];
-        for (PollSlider *slider in self.castView.agendaSliders) {
-            [agendaPollValues addObject:[PollSliderItem valueWithTitle:slider.titleLabel.text
-                                                                 value:@([slider.multisectorControl.sectors.firstObject endValue])]];
-        }
-
-        Poll *poll = [Poll pollWithFullName:self.castView.nameField.textField.text
-                                      email:self.castView.emailField.textField.text
-                          additionalComment:self.castView.commentsView.textView.text
-                        generalFeelingValue:@([self.castView.generalSlider.multisectorControl.sectors.firstObject endValue])
-                           agendaItemValues:agendaPollValues];
-
-        [[PollManager sharedInstance] sendPoll:poll completion:^(BOOL succeeded) {
-            if (succeeded) {
-                [self.castView setPollCompleted:YES];
-                [self.navigationItem setRightBarButtonItem:nil animated:YES];
-            }
-        }];
+    BOOL userConfirmed = buttonIndex != alertView.cancelButtonIndex;
+    if (userConfirmed && !self.pollManager.isPollCompleted) {
+        [self sendPollData];
     }
 }
+
+- (void)sendPollData {
+    PollView *view = self.castView;
+    NSArray *agendaSliders = view.agendaSliders;
+    NSArray *agendaPollValues = [self collectValuesFromSliders:agendaSliders];
+
+    NSNumber *generalFeelingValue = @([view.generalSlider.multisectorControl.sectors.firstObject endValue]);
+    Poll *poll = [Poll pollWithFullName:view.nameField.textField.text
+                                  email:view.emailField.textField.text
+                      additionalComment:view.commentsView.textView.text
+                    generalFeelingValue:generalFeelingValue
+                       agendaItemValues:agendaPollValues];
+
+    [self.pollManager sendPoll:poll completion:^(BOOL succeeded) {
+        if (succeeded) {
+            [view setPollCompleted:YES];
+            [self.navigationItem setRightBarButtonItem:nil animated:YES];
+        }
+    }];
+}
+
+- (NSArray *)collectValuesFromSliders:(NSArray *)agendaSliders {
+    NSMutableArray *agendaPollValues = [NSMutableArray array];
+    for (PollSlider *slider in agendaSliders) {
+        [agendaPollValues addObject:[PollSliderItem valueWithTitle:slider.titleLabel.text
+                                                             value:@([slider.multisectorControl.sectors.firstObject endValue])]];
+    }
+    return agendaPollValues;
+}
+
+#pragma mark - Delegates
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if ([textField.text length] == 0) {
@@ -115,6 +136,8 @@
         textView.text = @"";
     }
 }
+
+#pragma mark - Helpers
 
 - (BOOL)isValidEmail:(NSString *)checkString {
     BOOL stricterFilter = YES;
