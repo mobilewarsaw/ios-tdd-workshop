@@ -42,7 +42,8 @@
     NSMutableArray *speakers = [NSMutableArray array];
 
     for (NSDictionary *JSONSpeaker in JSONSpeakers) {
-        Speaker *speaker = [[Speaker alloc] initWithName:JSONSpeaker[@"name"] photo:nil];
+        UIImage *image = [UIImage imageNamed:JSONSpeaker[@"image"]];
+        Speaker *speaker = [[Speaker alloc] initWithName:JSONSpeaker[@"name"] photo:image];
         [speakers addObject:speaker];
     }
 
