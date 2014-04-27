@@ -11,6 +11,7 @@
 		1EDB80AF6BC4C379C818A5CF /* AgendaProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8361EBA8EEABB97963E4 /* AgendaProviderSpec.m */; };
 		1EDB85C9DAF2B5A908D93A10 /* AgendaCollectionViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB861D7FD3F44E422AEECE /* AgendaCollectionViewDataSourceSpec.m */; };
 		1EDB885EAA0CA775A8707F6E /* FakeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8A2AB8AECD1BF0ECAECA /* FakeCollectionView.m */; };
+		1EDB88CAC1B7B35390F5CCEB /* FakeStreamItemDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB84ABB3D1618771934DA1 /* FakeStreamItemDownloader.m */; };
 		1EDB8BEABDCA85858CE325DC /* FakeAgendaCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB836B8C0BBED816EC918A /* FakeAgendaCollectionViewDataSource.m */; };
 		1EDB8D90D1C24754015D8FF2 /* FakeAgendaProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB8C06591F6E2CFA397CAF /* FakeAgendaProvider.m */; };
 		1EDB8E63A5547729FE9E90FB /* AgendaItemFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB86E908039895488C9398 /* AgendaItemFixture.m */; };
@@ -119,8 +120,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EDB828239450A48A0A120EA /* FakeStreamItemDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeStreamItemDownloader.h; sourceTree = "<group>"; };
 		1EDB8361EBA8EEABB97963E4 /* AgendaProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaProviderSpec.m; sourceTree = "<group>"; };
 		1EDB836B8C0BBED816EC918A /* FakeAgendaCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeAgendaCollectionViewDataSource.m; sourceTree = "<group>"; };
+		1EDB84ABB3D1618771934DA1 /* FakeStreamItemDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeStreamItemDownloader.m; sourceTree = "<group>"; };
 		1EDB84F5A15840E705C1A65A /* FakeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeCollectionView.h; sourceTree = "<group>"; };
 		1EDB861D7FD3F44E422AEECE /* AgendaCollectionViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaCollectionViewDataSourceSpec.m; sourceTree = "<group>"; };
 		1EDB86E908039895488C9398 /* AgendaItemFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaItemFixture.m; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 				81086FD55CC1316A7DC6B195 /* FakePollViewController.h */,
 				81086A10BFA7B0A80AE1DC6E /* FakeViewValidatorFactory.m */,
 				81086B8B7F531CD78206A31C /* FakeViewValidatorFactory.h */,
+				1EDB84ABB3D1618771934DA1 /* FakeStreamItemDownloader.m */,
+				1EDB828239450A48A0A120EA /* FakeStreamItemDownloader.h */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -783,7 +788,7 @@
 				ORGANIZATIONNAME = "Mobile Warsaw";
 				TargetAttributes = {
 					43C5D4D41904429F002D1766 = {
-						TestTargetID = 43C5D4B01904429F002D1766 /* TDD Workshop */;
+						TestTargetID = 43C5D4B01904429F002D1766;
 					};
 				};
 			};
@@ -989,6 +994,7 @@
 				8108632DC13EC8A20D155989 /* EMailValidatorSpec.m in Sources */,
 				8108623605FE3E730D2F7ACE /* FakeViewValidatorFactory.m in Sources */,
 				8108679077A588DAFEA31B68 /* SpecValidatorFixture.m in Sources */,
+				1EDB88CAC1B7B35390F5CCEB /* FakeStreamItemDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,13 @@
 #import "Specs.h"
 #import "PhotoStreamViewController.h"
 #import "StreamItem.h"
+#import "FakeStreamItemDownloader.h"
+
+
+@interface PhotoStreamViewController ()
+@property(nonatomic, strong) UIRefreshControl *refreshControl;
+@property(nonatomic, strong) NSMutableArray *streamItems;
+@end
 
 SPEC_BEGIN(PhotoStreamViewController)
     describe(@"PhotoStreamViewController", ^{
@@ -31,15 +38,32 @@ SPEC_BEGIN(PhotoStreamViewController)
         });
 
         describe(@"when view did load", ^{
-            __block StreamItemDownloader *streamItemDownloaderMock;
+            __block FakeStreamItemDownloader *fakeStreamItemDownloader;
             beforeEach(^{
-                streamItemDownloaderMock = mock([StreamItemDownloader class]);
-                photoStreamViewController.streamItemDownloader = streamItemDownloaderMock;
+                fakeStreamItemDownloader = [FakeStreamItemDownloader new];
+                photoStreamViewController.streamItemDownloader = (id) fakeStreamItemDownloader;
+                fakeStreamItemDownloader.delegate = photoStreamViewController;
 
                 [photoStreamViewController view]; //to force the view to be loaded
             });
             it(@"should download stream items", ^{
-               [verify(streamItemDownloaderMock) downloadStreamItems];
+                expect(fakeStreamItemDownloader.downloadStreamItemsCalled).to.beTruthy();
+            });
+
+            describe(@"and download succeeds", ^{
+                __block NSArray *items;
+                beforeEach(^{
+                    items = @[];
+                    [fakeStreamItemDownloader simulateDidDownloadItems:items];
+                });
+
+                it(@"should set stream items", ^{
+                    expect(photoStreamViewController.streamItems).to.equal(items);
+                });
+
+                it(@"should stop animating refresh control", ^{
+                    expect(photoStreamViewController.refreshControl.isRefreshing).to.beFalsy();
+                });
             });
         });
 
