@@ -125,12 +125,16 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     id <Validating> validator = [self.validatorFactory validatorForView:textField];
-    [validator validateText:textField.text];
+    if (![validator validateText:textField.text]) {
+        textField.text = @"";
+    }
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     id <Validating> validator = [self.validatorFactory validatorForView:textView];
-    [validator validateText:textView.text];
+    if (![validator validateText:textView.text]) {
+        textView.text = @"";
+    }
 }
 
 @end

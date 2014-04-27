@@ -92,9 +92,9 @@ describe(@"PollViewController", ^{
             });
 
             it(@"should configure navigation item in view will appear", ^{
-                controller = [FakePollViewController new];
-                [controller viewWillAppear:NO];
-                expect([(FakePollViewController *)controller didCallConfigureRightNavigationItem]).to.beTruthy();
+                FakePollViewController *fakeController = [FakePollViewController new];
+                [fakeController viewWillAppear:NO];
+                expect([(FakePollViewController *)fakeController didCallConfigureRightNavigationItem]).to.beTruthy();
             });
         });
 
